@@ -16,5 +16,10 @@ namespace SceneConstructor
 		{
 			InitializeComponent();
 		}
+
+		private void chromiumWebBrowser1_LoadingStateChanged(object sender, CefSharp.LoadingStateChangedEventArgs e)
+		{
+			chromiumWebBrowser1.Refresh();
+		}
 	}
 }

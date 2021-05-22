@@ -17,6 +17,17 @@ namespace SceneConstructor
 			InitializeComponent();
 		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Hide();
+			CreateScene newForm = new CreateScene();
+			newForm.Owner = this;
+			newForm.ShowDialog();
+		}
 
+		private void bOpen_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

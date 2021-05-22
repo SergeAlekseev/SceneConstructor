@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace SceneConstructor
 {
-	public partial class EditorScene : Form
+	public partial class AddMarker : Form
 	{
-		public EditorScene(Scene scene)
+		public AddMarker()
 		{
 			InitializeComponent();
-		}
-
-		private void bSelectJS_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void EditorScene_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			Owner.Show();
 		}
 	}
 }

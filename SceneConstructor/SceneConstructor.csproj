@@ -47,6 +47,9 @@
     <Reference Include="CefSharp.WinForms, Version=90.6.50.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
       <HintPath>..\packages\CefSharp.WinForms.90.6.50\lib\net452\CefSharp.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,11 +63,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionModel.cs" />
+    <Compile Include="ActionU.cs" />
+    <Compile Include="AddEnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEnt.Designer.cs">
+      <DependentUpon>AddEnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ent.cs" />
+    <Compile Include="Marker.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="AddJS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddJS.Designer.cs">
       <DependentUpon>AddJS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMarker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMarker.Designer.cs">
+      <DependentUpon>AddMarker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionType.cs" />
+    <Compile Include="AddModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddModel.Designer.cs">
+      <DependentUpon>AddModel.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateScene.cs">
       <SubType>Form</SubType>
@@ -78,6 +105,8 @@
     <Compile Include="EditorScene.Designer.cs">
       <DependentUpon>EditorScene.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelScene.cs" />
+    <Compile Include="Scene.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,14 +115,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Using.cs" />
     <Compile Include="WEB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WEB.Designer.cs">
       <DependentUpon>WEB.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEnt.resx">
+      <DependentUpon>AddEnt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddJS.resx">
       <DependentUpon>AddJS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMarker.resx">
+      <DependentUpon>AddMarker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddModel.resx">
+      <DependentUpon>AddModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateScene.resx">
       <DependentUpon>CreateScene.cs</DependentUpon>
@@ -114,6 +153,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WEB.resx">
+      <DependentUpon>WEB.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
