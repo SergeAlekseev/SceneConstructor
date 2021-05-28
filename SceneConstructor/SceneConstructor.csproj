@@ -63,7 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionModel.cs" />
     <Compile Include="ActionU.cs" />
     <Compile Include="AddEnt.cs">
       <SubType>Form</SubType>

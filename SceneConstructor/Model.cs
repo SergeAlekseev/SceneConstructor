@@ -9,17 +9,14 @@ namespace SceneConstructor
 {
 	public class Model
 	{
-		public string GUID;
-		public string Size;
+		public string GUID = "";
+		public string Name = "";
 		public List<Using> Usings = new List<Using>();
 
-		public Model(string path, string name)
-		{
-			this.GUID = path;
-			this.Size = name;
-		}
+	
 
-		
+		public override string ToString() { return Name; }
+
 
 	}
 }

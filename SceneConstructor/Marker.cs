@@ -9,13 +9,11 @@ namespace SceneConstructor
 	public class Marker
 	{
 		public string GUID = "";
+		public string Name = "";
 		public List<ModelScene> Models = new List<ModelScene>();
-		public TypeMarker MarkerType;
+		public string MarkerType = "HIRO";
 
+		public override string ToString() { return Name; }
 
-		public enum TypeMarker
-		{
-			IMAGE, PATTERN, NOTMARKER
-		}
 	}
 }

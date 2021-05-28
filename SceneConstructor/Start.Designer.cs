@@ -31,6 +31,7 @@ namespace SceneConstructor
 		{
 			this.button1 = new System.Windows.Forms.Button();
 			this.bOpen = new System.Windows.Forms.Button();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -53,6 +54,10 @@ namespace SceneConstructor
 			this.bOpen.UseVisualStyleBackColor = true;
 			this.bOpen.Click += new System.EventHandler(this.bOpen_Click);
 			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
 			// Start
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -71,6 +76,7 @@ namespace SceneConstructor
 
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button bOpen;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 	}
 }
 

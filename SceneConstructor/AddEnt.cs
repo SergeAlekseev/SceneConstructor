@@ -86,8 +86,11 @@ namespace SceneConstructor
 
 		private void bEdit_Click(object sender, EventArgs e)
 		{
-			AddEnt newForm = new AddEnt(ent, lbEnt.SelectedItem as Ent);
-			initNewEnt(newForm);
+			if (lbEnt.SelectedItem != null)
+			{
+				AddEnt newForm = new AddEnt(ent, lbEnt.SelectedItem as Ent);
+				initNewEnt(newForm);
+			}
 		}
 
 		private void initNewEnt(AddEnt newForm)

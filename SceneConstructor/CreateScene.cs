@@ -27,10 +27,13 @@ namespace SceneConstructor
 
 		private void bEdit_Click(object sender, EventArgs e)
 		{
-			AddJS newForm = new AddJS(scene, lbActions.SelectedItem as ActionType);
-			newForm.FormClosed += NewForm_FormClosed;
-			newForm.Owner = this;
-			newForm.ShowDialog();
+			if (lbActions.SelectedItem != null)
+			{
+				AddJS newForm = new AddJS(scene, lbActions.SelectedItem as ActionType);
+				newForm.FormClosed += NewForm_FormClosed;
+				newForm.Owner = this;
+				newForm.ShowDialog();
+			}
 		}
 
 		private void bDelete_Click(object sender, EventArgs e)

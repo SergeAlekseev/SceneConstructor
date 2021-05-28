@@ -14,28 +14,30 @@ namespace SceneConstructor
 		public string GUID = "";
 		public string Name = "";
 		public List<Marker> Markers = new List<Marker>();
+		public List<ModelScene> OtherModels = new List<ModelScene>();
+
 
 		[JsonIgnore]
 		public List<ActionType> actionTypes = new List<ActionType>();
 
 		public string TypeMarkers = "PATTERN";
 
-		public Scene() 
+		public Scene()
 		{
 			try
 			{
-				var data = File.ReadAllText(Environment.CurrentDirectory + "\\ActionTypes.json");
-				Console.WriteLine(data);
-				actionTypes = JsonConvert.DeserializeObject<List<ActionType>>(data);
+				string data = File.ReadAllText(Environment.CurrentDirectory + "\\ActionTypes.json");
+				if (data != "")
+					actionTypes = JsonConvert.DeserializeObject<List<ActionType>>(data);
 			}
-			catch 
+			catch
 			{
 				StreamWriter file = File.CreateText(Environment.CurrentDirectory + "\\ActionTypes.json");
 				file.Close();
 			};
 		}
 
-		public void saveActionTypes() 
+		public void saveActionTypes()
 		{
 			string output = JsonConvert.SerializeObject(actionTypes);
 			StreamWriter file = File.CreateText(Environment.CurrentDirectory + "\\ActionTypes.json");

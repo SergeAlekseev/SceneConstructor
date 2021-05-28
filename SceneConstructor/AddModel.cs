@@ -12,9 +12,21 @@ namespace SceneConstructor
 {
 	public partial class AddModel : Form
 	{
-		public AddModel()
+		private ModelScene modelScene;
+
+		public AddModel(Marker marker)
 		{
 			InitializeComponent();
+		}
+
+		public AddModel(ModelScene modelScene)
+		{
+			this.modelScene = modelScene;
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
