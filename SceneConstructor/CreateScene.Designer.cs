@@ -43,12 +43,16 @@ namespace SceneConstructor
 			this.lbActions = new System.Windows.Forms.ListBox();
 			this.bDelete = new System.Windows.Forms.Button();
 			this.bEdit = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.gbTypeScene.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// bSave
 			// 
-			this.bSave.Location = new System.Drawing.Point(200, 387);
+			this.bSave.Location = new System.Drawing.Point(200, 489);
 			this.bSave.Name = "bSave";
 			this.bSave.Size = new System.Drawing.Size(94, 23);
 			this.bSave.TabIndex = 0;
@@ -79,7 +83,7 @@ namespace SceneConstructor
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(12, 60);
+			this.label3.Location = new System.Drawing.Point(12, 171);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(57, 13);
 			this.label3.TabIndex = 6;
@@ -87,7 +91,7 @@ namespace SceneConstructor
 			// 
 			// bSelectJS
 			// 
-			this.bSelectJS.Location = new System.Drawing.Point(200, 85);
+			this.bSelectJS.Location = new System.Drawing.Point(200, 187);
 			this.bSelectJS.Name = "bSelectJS";
 			this.bSelectJS.Size = new System.Drawing.Size(94, 23);
 			this.bSelectJS.TabIndex = 5;
@@ -139,7 +143,7 @@ namespace SceneConstructor
 			this.gbTypeScene.Controls.Add(this.radioButton1);
 			this.gbTypeScene.Controls.Add(this.radioButton2);
 			this.gbTypeScene.Controls.Add(this.radioButton3);
-			this.gbTypeScene.Location = new System.Drawing.Point(15, 310);
+			this.gbTypeScene.Location = new System.Drawing.Point(15, 412);
 			this.gbTypeScene.Name = "gbTypeScene";
 			this.gbTypeScene.Size = new System.Drawing.Size(99, 100);
 			this.gbTypeScene.TabIndex = 14;
@@ -149,14 +153,14 @@ namespace SceneConstructor
 			// lbActions
 			// 
 			this.lbActions.FormattingEnabled = true;
-			this.lbActions.Location = new System.Drawing.Point(15, 85);
+			this.lbActions.Location = new System.Drawing.Point(15, 187);
 			this.lbActions.Name = "lbActions";
 			this.lbActions.Size = new System.Drawing.Size(179, 212);
 			this.lbActions.TabIndex = 15;
 			// 
 			// bDelete
 			// 
-			this.bDelete.Location = new System.Drawing.Point(200, 143);
+			this.bDelete.Location = new System.Drawing.Point(200, 245);
 			this.bDelete.Name = "bDelete";
 			this.bDelete.Size = new System.Drawing.Size(94, 23);
 			this.bDelete.TabIndex = 19;
@@ -166,7 +170,7 @@ namespace SceneConstructor
 			// 
 			// bEdit
 			// 
-			this.bEdit.Location = new System.Drawing.Point(200, 114);
+			this.bEdit.Location = new System.Drawing.Point(200, 216);
 			this.bEdit.Name = "bEdit";
 			this.bEdit.Size = new System.Drawing.Size(94, 23);
 			this.bEdit.TabIndex = 18;
@@ -174,11 +178,48 @@ namespace SceneConstructor
 			this.bEdit.UseVisualStyleBackColor = true;
 			this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(12, 88);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(92, 13);
+			this.label2.TabIndex = 21;
+			this.label2.Text = "Описание сцены";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(15, 104);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(179, 55);
+			this.textBox1.TabIndex = 20;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(12, 49);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(142, 13);
+			this.label4.TabIndex = 23;
+			this.label4.Text = "Отображаемое имя сцены";
+			// 
+			// textBox2
+			// 
+			this.textBox2.Location = new System.Drawing.Point(15, 65);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(179, 20);
+			this.textBox2.TabIndex = 22;
+			// 
 			// CreateScene
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(306, 420);
+			this.ClientSize = new System.Drawing.Size(306, 522);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.bDelete);
 			this.Controls.Add(this.bEdit);
 			this.Controls.Add(this.lbActions);
@@ -192,6 +233,7 @@ namespace SceneConstructor
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CreateScene";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateScene_FormClosing);
+			this.Load += new System.EventHandler(this.CreateScene_Load);
 			this.gbTypeScene.ResumeLayout(false);
 			this.gbTypeScene.PerformLayout();
 			this.ResumeLayout(false);
@@ -215,5 +257,9 @@ namespace SceneConstructor
 		private System.Windows.Forms.ListBox lbActions;
 		private System.Windows.Forms.Button bDelete;
 		private System.Windows.Forms.Button bEdit;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox textBox2;
 	}
 }

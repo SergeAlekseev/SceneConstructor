@@ -11,6 +11,8 @@ namespace SceneConstructor
 
 		public ActionType actionType;
 		private Scene scene;
+		bool edit;
+		string oldName = "";
 
 
 		public AddJS(Scene scene)
@@ -25,10 +27,12 @@ namespace SceneConstructor
 		public AddJS(Scene scene, ActionType actionType)
 		{
 			InitializeComponent();
+			oldName = actionType.name;
 			this.scene = scene;
+			edit = true;
 			openFileDialog1.Filter = "Script files(*.js)|*.js";
 			tb.Text = actionType.name;
-			textBox1.Text = actionType.path;
+			textBox1.Text = actionType.name + ".js";
 			this.actionType = actionType;
 			lbInit();
 		}
@@ -40,19 +44,23 @@ namespace SceneConstructor
 
 		private void bSelectModel_Click(object sender, EventArgs e)
 		{
-			if (openFileDialog1.ShowDialog() == DialogResult.OK)
-			{
-				var str = openFileDialog1.FileName.Split(new[] { '\\' }).Last();
-				Directory.CreateDirectory(Environment.CurrentDirectory + "\\ActionTypes");
-				File.Copy(openFileDialog1.FileName, Path.Combine(Environment.CurrentDirectory + "\\ActionTypes", str), true);
-				string filename = "ActionTypes" + '\\' + str;
-				textBox1.Text = filename;
-				actionType.path = textBox1.Text;
+			actionType.name = tb.Text;
+			if (actionType.name != "")
+				if (openFileDialog1.ShowDialog() == DialogResult.OK)
+				{
+					saveFile();
+				}
+				else
+					return;
+			else MessageBox.Show("Write name please");
+		}
 
-			}
-			else
-				return;
-
+		private void saveFile()
+		{
+			var str = openFileDialog1.FileName.Split(new[] { '\\' }).Last();
+			Directory.CreateDirectory(Environment.CurrentDirectory + "\\resources\\components\\actions");
+			File.Copy(openFileDialog1.FileName, Path.Combine(Environment.CurrentDirectory + "\\resources\\components\\actions\\" + actionType.name + ".js"), true);
+			textBox1.Text = str;
 		}
 
 		private void bAdd_Click(object sender, EventArgs e)
@@ -90,17 +98,25 @@ namespace SceneConstructor
 		private void bDelete_Click(object sender, EventArgs e)
 		{
 			actionType.fields.Remove(lbEnt.SelectedItem as Ent);
-			NewForm_FormClosed(null,null);
+			NewForm_FormClosed(null, null);
 		}
 
 		private void bSelectJS_Click(object sender, EventArgs e)
 		{
 			if (tb.Text != "")
 			{
-				if (actionType.path != "")
+				if (textBox1.Text != "")
 				{
 					actionType.name = tb.Text;
-					scene.actionTypes.Add(actionType);
+					if (!edit)
+						scene.actionTypes.Add(actionType);
+					if (openFileDialog1.FileName != "")
+						saveFile();
+					else if (oldName != actionType.name)
+					{
+						File.Move(Environment.CurrentDirectory + "\\resources\\components\\actions\\" + oldName + ".js",
+							Environment.CurrentDirectory + "\\resources\\components\\actions\\" + actionType.name + ".js");
+					}
 					scene.saveActionTypes();
 					this.Close();
 				}

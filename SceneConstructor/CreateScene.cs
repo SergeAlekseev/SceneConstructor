@@ -54,11 +54,12 @@ namespace SceneConstructor
 		{
 			if (tb.Text != "")
 			{
-				scene.Name = tb.Text;
-				scene.GUID = Guid.NewGuid().ToString();
+				scene.title = textBox2.Text;
+				scene.subtitle = textBox1.Text;
+				scene.name = tb.Text;
 				string output = JsonConvert.SerializeObject(scene);
-				Directory.CreateDirectory(Environment.CurrentDirectory + "\\" + scene.Name);
-				StreamWriter file = File.CreateText(Environment.CurrentDirectory + "\\" + scene.Name + "\\" + scene.GUID + ".json");
+				Directory.CreateDirectory(Environment.CurrentDirectory + "\\scenes");
+				StreamWriter file = File.CreateText(Environment.CurrentDirectory + "\\scenes" + "\\" + scene.name + ".json");
 				file.Write(output);
 				file.Close();
 
@@ -77,16 +78,21 @@ namespace SceneConstructor
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 			if (radioButton1.Checked)
-				scene.TypeMarkers = "PATTERN";
+				scene.typeMarkers = "PATTERN";
 			else if (radioButton2.Checked)
-				scene.TypeMarkers = "IMAGE";
+				scene.typeMarkers = "IMAGE";
 			else
-				scene.TypeMarkers = "NOTMARKER";
+				scene.typeMarkers = "NOTMARKER";
 		}
 
 		private void CreateScene_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			Owner.Show();
+		}
+
+		private void CreateScene_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

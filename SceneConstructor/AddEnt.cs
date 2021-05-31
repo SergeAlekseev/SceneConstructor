@@ -135,8 +135,13 @@ namespace SceneConstructor
 					ent.Type = "Text";
 					ent.ents = null;
 				}
-				else
+				else if (radioButton3.Checked)
 					ent.Type = "ListObject";
+				else 
+				{
+					ent.Type = "Position";
+					ent.ents = null;
+				}
 				if (!edit)
 					if (parentEnt != null)
 						parentEnt.ents.Add(ent);

@@ -30,7 +30,7 @@ namespace SceneConstructor
 						lbMetk.ValueMember = "Value";*/
 
 
-			if (scene.TypeMarkers == "NOTMARKER")
+			if (scene.typeMarkers == "NOTMARKER")
 			{
 				lbMetk.Enabled = false;
 				bAddMetk.Enabled = false;
@@ -39,7 +39,7 @@ namespace SceneConstructor
 				models = scene.OtherModels;
 			}
 
-			lbMetk.DataSource = scene.Markers;
+			lbMetk.DataSource = scene.markers;
 
 		}
 
@@ -63,8 +63,8 @@ namespace SceneConstructor
 			if (lbMetk.SelectedItem != null)
 			{
 				lbModel.DataSource = null;
-				lbModel.DataSource = (lbMetk.SelectedItem as Marker).Models; ////
-				models = (lbMetk.SelectedItem as Marker).Models;
+				lbModel.DataSource = (lbMetk.SelectedItem as Marker).models; ////
+				models = (lbMetk.SelectedItem as Marker).models;
 				lbUsing.DataSource = null;
 				lbAction.DataSource = null;
 			}
@@ -75,7 +75,7 @@ namespace SceneConstructor
 			if (lbModel.SelectedItem != null)
 			{
 				lbUsing.DataSource = null;
-				lbUsing.DataSource = (lbModel.SelectedItem as ModelScene).model.Usings;
+				lbUsing.DataSource = (lbModel.SelectedItem as ModelScene).model.anchors;
 				lbAction.DataSource = null;
 			}
 		}
@@ -110,14 +110,14 @@ namespace SceneConstructor
 
 		private void bDeleteMetk_Click(object sender, EventArgs e)
 		{
-			scene.Markers.Remove(lbMetk.SelectedItem as Marker);
+			scene.markers.Remove(lbMetk.SelectedItem as Marker);
 			Marker_FormClosed(null, null);
 		}
 
 		private void Marker_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			lbMetk.DataSource = null;
-			lbMetk.DataSource = scene.Markers;
+			lbMetk.DataSource = scene.markers;
 			lbModel.DataSource = null;
 			lbUsing.DataSource = null;
 			lbAction.DataSource = null;
@@ -156,8 +156,8 @@ namespace SceneConstructor
 		{
 
 			lbModel.DataSource = null;
-			lbModel.DataSource = (lbMetk.SelectedItem as Marker).Models;
-			models = (lbMetk.SelectedItem as Marker).Models;
+			lbModel.DataSource = (lbMetk.SelectedItem as Marker).models;
+			models = (lbMetk.SelectedItem as Marker).models;
 			lbUsing.DataSource = null;
 			lbAction.DataSource = null;
 

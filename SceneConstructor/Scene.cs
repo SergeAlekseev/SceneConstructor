@@ -11,16 +11,17 @@ namespace SceneConstructor
 
 	public class Scene
 	{
-		public string GUID = "";
-		public string Name = "";
-		public List<Marker> Markers = new List<Marker>();
+		public string name = "";
+		public string title = "";
+		public string subtitle = "";
+		public List<Marker> markers = new List<Marker>();
 		public List<ModelScene> OtherModels = new List<ModelScene>();
 
 
 		[JsonIgnore]
 		public List<ActionType> actionTypes = new List<ActionType>();
 
-		public string TypeMarkers = "PATTERN";
+		public string typeMarkers = "PATTERN";
 
 		public Scene()
 		{

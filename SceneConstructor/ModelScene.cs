@@ -9,12 +9,17 @@ namespace SceneConstructor
 {
 	public class ModelScene
 	{
-		public string GUID;
-		public string Size;
-		public string Position;
+		public string id = "";
+		public Position size = new Position();
+		public Position position = new Position();
+		public Position markerOffset = new Position();
+
 
 		[JsonIgnore]
-		public Model model;
+		public Model model = new Model();
+
+
+		public override string ToString() { return id; }
 
 	}
 }

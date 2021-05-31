@@ -28,7 +28,7 @@ namespace SceneConstructor
 		{
 			InitializeComponent();
 			this.marker = marker;
-			tb.Text = marker.Name;
+			tb.Text = marker.id;
 			edit = true;
 			init(scene, marker);
 		}
@@ -37,7 +37,7 @@ namespace SceneConstructor
 		{
 			this.scene = scene;
 
-			if (scene.TypeMarkers == "IMAGE")
+			if (scene.typeMarkers == "IMAGE")
 			{
 				groupBox1.Enabled = false;
 				radioButton1.Checked = true;
@@ -47,15 +47,15 @@ namespace SceneConstructor
 				button3.Enabled = false;
 				button2.Enabled = false;
 				button1.Enabled = false;
-				textBox1.Text = marker.GUID;
-				textBox2.Text = marker.GUID;
-				textBox3.Text = marker.GUID;
+				textBox1.Text = marker.id;
+				textBox2.Text = marker.id;
+				textBox3.Text = marker.id;
 			};
-			if (marker.MarkerType == "PATTERN")
+			if (marker.markerType == "pattern")
 			{
 				radioButton2.Checked = true;
 				button1.Enabled = false;
-				textBox1.Text = marker.GUID;
+				textBox1.Text = marker.markerValue;
 			}
 		}
 
@@ -63,13 +63,17 @@ namespace SceneConstructor
 		{
 			if (tb.Text != "")
 			{
-				if (scene.TypeMarkers == "IMAGE" && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != ""
-					|| scene.TypeMarkers == "PATTERN" && textBox1.Text != ""
-					|| scene.TypeMarkers == "PATTERN" && marker.MarkerType == "HIRO")
+				if (scene.typeMarkers == "IMAGE" && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != ""
+					|| scene.typeMarkers == "PATTERN" && textBox1.Text != ""
+					|| scene.typeMarkers == "PATTERN" && marker.markerType == "hiro")
 				{
-					marker.Name = tb.Text;
+
+					marker.id = tb.Text;
 					if (!edit)
-						scene.Markers.Add(marker);
+					{
+						marker.markerValue = tb.Text;
+						scene.markers.Add(marker);
+					}
 					this.Close();
 				}
 				else MessageBox.Show("No marker files");
@@ -84,13 +88,13 @@ namespace SceneConstructor
 				button1.Enabled = true;
 				label1.Text = ".patt";
 				openFileDialog1.Filter = "(*.patt)|*.patt";
-				marker.MarkerType = "PATTERN";
+				marker.markerType = "pattern";
 
 
 			}
 			else if (radioButton1.Checked)
 			{
-				marker.MarkerType = "IMAGE";
+				marker.markerType = "image";
 
 				button3.Enabled = true;
 				label3.Text = ".iset";
@@ -109,7 +113,7 @@ namespace SceneConstructor
 			}
 			else if (radioButton3.Checked)
 			{
-				marker.MarkerType = "HIRO";
+				marker.markerType = "hiro";
 
 				button3.Enabled = false;
 				button2.Enabled = false;
@@ -122,7 +126,7 @@ namespace SceneConstructor
 			saveFileMetk(openFileDialog1, textBox1);
 		}
 
-		
+
 
 		private void button2_Click(object sender, EventArgs e)
 		{
@@ -137,17 +141,21 @@ namespace SceneConstructor
 
 		private void saveFileMetk(OpenFileDialog openFileDialog, TextBox textBox)
 		{
-			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			if (!edit)
 			{
-				var format = openFileDialog.FileName.Split(new[] { '.' }).Last();
-				if (marker.GUID == "")
-					marker.GUID = Guid.NewGuid().ToString();
-				Directory.CreateDirectory(Environment.CurrentDirectory + "\\" + scene.Name + "\\Markers\\" + marker.GUID);
-				File.Copy(openFileDialog.FileName, Path.Combine(Environment.CurrentDirectory + "\\" + scene.Name + "\\Markers\\" + marker.GUID + "\\" + marker.GUID + "." + format), true);
-				textBox.Text = openFileDialog.FileName.Split(new[] { '\\' }).Last();
+				marker.markerValue = tb.Text;
 			}
-			else
-				return;
+			if (marker.markerValue != "")
+				if (openFileDialog1.ShowDialog() == DialogResult.OK)
+				{
+					var format = openFileDialog.FileName.Split(new[] { '.' }).Last();
+					Directory.CreateDirectory(Environment.CurrentDirectory + "\\resources\\markers");
+					File.Copy(openFileDialog.FileName, Path.Combine(Environment.CurrentDirectory + "\\resources\\markers" + marker.markerValue + "." + format), true);
+					textBox.Text = openFileDialog.FileName.Split(new[] { '\\' }).Last();
+				}
+				else
+					return;
+			else MessageBox.Show("Write marker value please");
 		}
 	}
 }

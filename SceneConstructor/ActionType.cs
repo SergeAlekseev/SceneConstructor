@@ -8,8 +8,6 @@ namespace SceneConstructor
 {
 	public class ActionType
 	{
-
-		public string path = "";
 		public string name = "";
 		public List<Ent> fields = new List<Ent>();
 

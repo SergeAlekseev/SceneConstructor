@@ -9,13 +9,14 @@ namespace SceneConstructor
 {
 	public class Model
 	{
-		public string GUID = "";
-		public string Name = "";
-		public List<Using> Usings = new List<Using>();
+		public string title = "";
+		public string subtitle = "";
+		public string desc = "";
+		public List<Using> anchors = new List<Using>();
+		public List<object> exhibit_components = new List<object>();
+		public List<string> pics = new List<string>();
 
-	
-
-		public override string ToString() { return Name; }
+		public override string ToString() { return title; }
 
 
 	}

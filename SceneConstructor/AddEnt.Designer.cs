@@ -41,6 +41,7 @@ namespace SceneConstructor
 			this.bDelete = new System.Windows.Forms.Button();
 			this.bEdit = new System.Windows.Forms.Button();
 			this.bAdd = new System.Windows.Forms.Button();
+			this.radioButton4 = new System.Windows.Forms.RadioButton();
 			this.gbTypeScene.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,12 +56,13 @@ namespace SceneConstructor
 			// 
 			// gbTypeScene
 			// 
+			this.gbTypeScene.Controls.Add(this.radioButton4);
 			this.gbTypeScene.Controls.Add(this.radioButton1);
 			this.gbTypeScene.Controls.Add(this.radioButton2);
 			this.gbTypeScene.Controls.Add(this.radioButton3);
 			this.gbTypeScene.Location = new System.Drawing.Point(190, 6);
 			this.gbTypeScene.Name = "gbTypeScene";
-			this.gbTypeScene.Size = new System.Drawing.Size(120, 100);
+			this.gbTypeScene.Size = new System.Drawing.Size(120, 109);
 			this.gbTypeScene.TabIndex = 21;
 			this.gbTypeScene.TabStop = false;
 			this.gbTypeScene.Text = "Тип атрибута";
@@ -168,6 +170,17 @@ namespace SceneConstructor
 			this.bAdd.UseVisualStyleBackColor = true;
 			this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
 			// 
+			// radioButton4
+			// 
+			this.radioButton4.AutoSize = true;
+			this.radioButton4.Location = new System.Drawing.Point(6, 88);
+			this.radioButton4.Name = "radioButton4";
+			this.radioButton4.Size = new System.Drawing.Size(69, 17);
+			this.radioButton4.TabIndex = 12;
+			this.radioButton4.Text = "Позиция";
+			this.radioButton4.UseVisualStyleBackColor = true;
+			this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+			// 
 			// AddEnt
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,5 +219,6 @@ namespace SceneConstructor
 		private System.Windows.Forms.Button bDelete;
 		private System.Windows.Forms.Button bEdit;
 		private System.Windows.Forms.Button bAdd;
+		private System.Windows.Forms.RadioButton radioButton4;
 	}
 }

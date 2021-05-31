@@ -8,12 +8,13 @@ namespace SceneConstructor
 {
 	public class Marker
 	{
-		public string GUID = "";
-		public string Name = "";
-		public List<ModelScene> Models = new List<ModelScene>();
-		public string MarkerType = "HIRO";
+		public string id = "";
+		public string markerValue = "";
+		public List<ModelScene> models = new List<ModelScene>();
+		public string markerType = "hiro";
 
-		public override string ToString() { return Name; }
+
+		public override string ToString() { return markerValue; }
 
 	}
 }
