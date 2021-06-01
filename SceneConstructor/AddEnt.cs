@@ -51,6 +51,8 @@ namespace SceneConstructor
 				radioButton2.Checked = true;
 			else if (ent.Type == "ListObject")
 				radioButton3.Checked = true;
+			else if (ent.Type == "Position")
+				radioButton4.Checked = true;
 			edit = true;
 			initLB();
 		}

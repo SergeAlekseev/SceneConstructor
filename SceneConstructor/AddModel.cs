@@ -93,14 +93,18 @@ namespace SceneConstructor
 					modelScene.model.desc = tbSubtitle.Text;
 					if (!edit)
 						marker.models.Add(modelScene);
-					if (openFileDialog1.FileName != "")
+					if (openFileDialog1.FileName != "openFileDialog1")
 						saveFile();
 					else if (oldName != modelScene.id)
 					{
 						File.Move(Environment.CurrentDirectory + "\\resources\\models\\" + oldName + ".glb",
 							Environment.CurrentDirectory + "\\resources\\models\\" + modelScene.id + ".glb");
-						File.Move(Environment.CurrentDirectory + "\\resources\\models\\" + oldName + ".json",
-							Environment.CurrentDirectory + "\\resources\\models\\" + modelScene.id + ".json");
+						try
+						{
+							File.Move(Environment.CurrentDirectory + "\\resources\\models\\" + oldName + ".json",
+								Environment.CurrentDirectory + "\\resources\\models\\" + modelScene.id + ".json");
+						}
+						catch { }
 					}
 					this.Close();
 				}

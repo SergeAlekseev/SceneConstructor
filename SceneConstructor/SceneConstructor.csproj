@@ -70,6 +70,12 @@
     <Compile Include="AddEnt.Designer.cs">
       <DependentUpon>AddEnt.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUsing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUsing.Designer.cs">
+      <DependentUpon>AddUsing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ent.cs" />
     <Compile Include="Marker.cs" />
     <Compile Include="Model.cs" />
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="ModelScene.cs" />
     <Compile Include="Position.cs" />
+    <Compile Include="SaveSceneAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveSceneAs.Designer.cs">
+      <DependentUpon>SaveSceneAs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scene.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
@@ -134,11 +146,17 @@
     <EmbeddedResource Include="AddModel.resx">
       <DependentUpon>AddModel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddUsing.resx">
+      <DependentUpon>AddUsing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateScene.resx">
       <DependentUpon>CreateScene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditorScene.resx">
       <DependentUpon>EditorScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveSceneAs.resx">
+      <DependentUpon>SaveSceneAs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>

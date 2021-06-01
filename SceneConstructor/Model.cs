@@ -18,6 +18,5 @@ namespace SceneConstructor
 
 		public override string ToString() { return title; }
 
-
 	}
 }

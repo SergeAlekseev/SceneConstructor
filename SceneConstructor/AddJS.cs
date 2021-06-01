@@ -110,7 +110,7 @@ namespace SceneConstructor
 					actionType.name = tb.Text;
 					if (!edit)
 						scene.actionTypes.Add(actionType);
-					if (openFileDialog1.FileName != "")
+					if (openFileDialog1.FileName != "openFileDialog1")
 						saveFile();
 					else if (oldName != actionType.name)
 					{

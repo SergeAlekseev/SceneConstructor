@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,34 +15,38 @@ namespace SceneConstructor
 	public partial class EditorScene : Form
 	{
 		Scene scene;
-		List<ModelScene> models;
 
 		public EditorScene(Scene scene)
 		{
 			InitializeComponent();
 			this.scene = scene;
-			/*
-						var choices = new Dictionary<string, string>();
-						choices["A"] = "Arthur";
-						choices["F"] = "Ford";
-						choices["T"] = "Trillian";
-						choices["Z"] = "Zaphod";
-						lbMetk.DataSource = new BindingSource(choices, null);
-						lbMetk.DisplayMember = "Key";
-						lbMetk.ValueMember = "Value";*/
+			init();
+		}
 
+		private void init()
+		{
+			lbMetk.Enabled = true;
+			bAddMetk.Enabled = true;
+			bEditMetk.Enabled = true;
+			bDeleteMetk.Enabled = true;
 
+			Marker marker = new Marker();
 			if (scene.typeMarkers == "NOTMARKER")
 			{
 				lbMetk.Enabled = false;
 				bAddMetk.Enabled = false;
 				bEditMetk.Enabled = false;
 				bDeleteMetk.Enabled = false;
-				models = scene.OtherModels;
+				marker.markerValue = "All models";
+				scene.markers.Add(marker);
 			}
 
+			lbMetk.DataSource = null;
 			lbMetk.DataSource = scene.markers;
-
+			lbMetk.SelectedItem = marker;
+			lbModel.DataSource = null;
+			lbUsing.DataSource = null;
+			lbAction.DataSource = null;
 		}
 
 		private void EditorScene_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,8 +69,7 @@ namespace SceneConstructor
 			if (lbMetk.SelectedItem != null)
 			{
 				lbModel.DataSource = null;
-				lbModel.DataSource = (lbMetk.SelectedItem as Marker).models; ////
-				models = (lbMetk.SelectedItem as Marker).models;
+				lbModel.DataSource = (lbMetk.SelectedItem as Marker).models;
 				lbUsing.DataSource = null;
 				lbAction.DataSource = null;
 			}
@@ -85,14 +90,14 @@ namespace SceneConstructor
 			if (lbUsing.SelectedItem != null)
 			{
 				lbAction.DataSource = null;
-				lbAction.DataSource = (lbUsing.SelectedItem as Using).Actions;
+				lbAction.DataSource = (lbUsing.SelectedItem as Using).actions;
 			}
 		}
 
 		private void bAddMetk_Click(object sender, EventArgs e)
 		{
 			AddMarker newForm = new AddMarker(scene);
-			newForm.FormClosed += Marker_FormClosed; ;
+			newForm.FormClosed += Marker_FormClosed;
 			newForm.Owner = this;
 			newForm.ShowDialog();
 		}
@@ -149,18 +154,77 @@ namespace SceneConstructor
 
 		private void bDeleteModel_Click(object sender, EventArgs e)
 		{
-
+			(lbMetk.SelectedItem as Marker).models.Remove(lbModel.SelectedItem as ModelScene);
+			AddModel_FormClosed(null, null);
 		}
 
 		private void AddModel_FormClosed(object sender, FormClosedEventArgs e)
 		{
-
 			lbModel.DataSource = null;
 			lbModel.DataSource = (lbMetk.SelectedItem as Marker).models;
-			models = (lbMetk.SelectedItem as Marker).models;
 			lbUsing.DataSource = null;
 			lbAction.DataSource = null;
+		}
 
+		private void bSave_Click(object sender, EventArgs e)
+		{
+			scene.saveScene();
+		}
+
+		private void bSaveAs_Click(object sender, EventArgs e)
+		{
+			SaveSceneAs newForm = new SaveSceneAs(scene);
+			newForm.Owner = this;
+			newForm.ShowDialog();
+		}
+
+		private void bAddUsing_Click(object sender, EventArgs e)
+		{
+			if (lbModel.SelectedItem != null)
+			{
+				AddUsing newForm = new AddUsing(lbModel.SelectedItem as ModelScene);
+				newForm.FormClosed += AddUsing_FormClosed;
+				newForm.Owner = this;
+				newForm.ShowDialog();
+			}
+		}
+
+		private void bEditUsing_Click(object sender, EventArgs e)
+		{
+			if (lbUsing.SelectedItem != null)
+			{
+				AddUsing newForm = new AddUsing(lbUsing.SelectedItem as Using);
+				newForm.FormClosed += AddUsing_FormClosed;
+				newForm.Owner = this;
+				newForm.ShowDialog();
+			}
+		}
+
+		private void AddUsing_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			lbUsing.DataSource = null;
+			lbUsing.DataSource = (lbModel.SelectedItem as ModelScene).model.anchors;
+			lbAction.DataSource = null;
+		}
+
+		private void bLoadScene_Click(object sender, EventArgs e)
+		{
+			openFileDialog1.Filter = "JSON files(*.json)|*.json";
+			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				string filename = openFileDialog1.FileName;
+				try
+				{
+					scene = Scene.openScene(filename);
+					init();
+				}
+				catch
+				{
+					MessageBox.Show("Not scene in file");
+				}
+			}
+			else
+				return;
 		}
 	}
 }

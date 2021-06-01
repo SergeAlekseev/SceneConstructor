@@ -1,12 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SceneConstructor
@@ -32,11 +25,9 @@ namespace SceneConstructor
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
 				string filename = openFileDialog1.FileName;
-				string fileText = System.IO.File.ReadAllText(filename);
-				Scene scene = new Scene();
 				try
 				{
-					scene = JsonConvert.DeserializeObject<Scene>(fileText);
+					Scene scene = Scene.openScene(filename);
 
 					EditorScene newForm = new EditorScene(scene);
 					newForm.Owner = this;
@@ -50,6 +41,8 @@ namespace SceneConstructor
 			}
 			else
 				return;
-			}
 		}
+
+
 	}
+}

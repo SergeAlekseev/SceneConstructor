@@ -36,11 +36,10 @@ namespace SceneConstructor
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.bPreVision = new System.Windows.Forms.Button();
-			this.button7 = new System.Windows.Forms.Button();
+			this.bSave = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
 			this.bUploadFTP = new System.Windows.Forms.Button();
-			this.button9 = new System.Windows.Forms.Button();
-			this.button10 = new System.Windows.Forms.Button();
+			this.bLoadScene = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.bAddModel = new System.Windows.Forms.Button();
 			this.bEditModel = new System.Windows.Forms.Button();
@@ -50,10 +49,13 @@ namespace SceneConstructor
 			this.lbAction = new System.Windows.Forms.ListBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.bEditMetk = new System.Windows.Forms.Button();
-			this.button13 = new System.Windows.Forms.Button();
-			this.button14 = new System.Windows.Forms.Button();
+			this.bDeleteUsing = new System.Windows.Forms.Button();
+			this.bAddUsing = new System.Windows.Forms.Button();
 			this.bDeleteMetk = new System.Windows.Forms.Button();
 			this.bDeleteModel = new System.Windows.Forms.Button();
+			this.bEditUsing = new System.Windows.Forms.Button();
+			this.bSaveAs = new System.Windows.Forms.Button();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.SuspendLayout();
 			// 
 			// bAddMetk
@@ -86,34 +88,34 @@ namespace SceneConstructor
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(679, 30);
+			this.button2.Location = new System.Drawing.Point(519, 420);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(146, 23);
+			this.button2.Size = new System.Drawing.Size(154, 23);
 			this.button2.TabIndex = 14;
 			this.button2.Text = "Добавить действие";
 			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(679, 59);
+			this.button3.Location = new System.Drawing.Point(519, 449);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(146, 23);
+			this.button3.Size = new System.Drawing.Size(154, 23);
 			this.button3.TabIndex = 15;
-			this.button3.Text = "Редактировать действие";
+			this.button3.Text = "Редактировать";
 			this.button3.UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
-			this.button4.Location = new System.Drawing.Point(679, 88);
+			this.button4.Location = new System.Drawing.Point(519, 478);
 			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(146, 23);
+			this.button4.Size = new System.Drawing.Size(154, 23);
 			this.button4.TabIndex = 16;
-			this.button4.Text = "Удалить действие";
+			this.button4.Text = "Удалить";
 			this.button4.UseVisualStyleBackColor = true;
 			// 
 			// bPreVision
 			// 
-			this.bPreVision.Location = new System.Drawing.Point(679, 168);
+			this.bPreVision.Location = new System.Drawing.Point(679, 30);
 			this.bPreVision.Name = "bPreVision";
 			this.bPreVision.Size = new System.Drawing.Size(146, 23);
 			this.bPreVision.TabIndex = 17;
@@ -121,18 +123,19 @@ namespace SceneConstructor
 			this.bPreVision.UseVisualStyleBackColor = true;
 			this.bPreVision.Click += new System.EventHandler(this.bPreVision_Click);
 			// 
-			// button7
+			// bSave
 			// 
-			this.button7.Location = new System.Drawing.Point(679, 253);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(146, 23);
-			this.button7.TabIndex = 19;
-			this.button7.Text = "Сохранить";
-			this.button7.UseVisualStyleBackColor = true;
+			this.bSave.Location = new System.Drawing.Point(679, 115);
+			this.bSave.Name = "bSave";
+			this.bSave.Size = new System.Drawing.Size(146, 23);
+			this.bSave.TabIndex = 19;
+			this.bSave.Text = "Сохранить";
+			this.bSave.UseVisualStyleBackColor = true;
+			this.bSave.Click += new System.EventHandler(this.bSave_Click);
 			// 
 			// button8
 			// 
-			this.button8.Location = new System.Drawing.Point(679, 420);
+			this.button8.Location = new System.Drawing.Point(679, 282);
 			this.button8.Name = "button8";
 			this.button8.Size = new System.Drawing.Size(146, 23);
 			this.button8.TabIndex = 20;
@@ -141,7 +144,7 @@ namespace SceneConstructor
 			// 
 			// bUploadFTP
 			// 
-			this.bUploadFTP.Location = new System.Drawing.Point(679, 478);
+			this.bUploadFTP.Location = new System.Drawing.Point(679, 340);
 			this.bUploadFTP.Name = "bUploadFTP";
 			this.bUploadFTP.Size = new System.Drawing.Size(146, 23);
 			this.bUploadFTP.TabIndex = 21;
@@ -149,23 +152,15 @@ namespace SceneConstructor
 			this.bUploadFTP.UseVisualStyleBackColor = true;
 			this.bUploadFTP.Click += new System.EventHandler(this.bUploadFTP_Click);
 			// 
-			// button9
+			// bLoadScene
 			// 
-			this.button9.Location = new System.Drawing.Point(679, 282);
-			this.button9.Name = "button9";
-			this.button9.Size = new System.Drawing.Size(146, 23);
-			this.button9.TabIndex = 22;
-			this.button9.Text = "Сохранить как";
-			this.button9.UseVisualStyleBackColor = true;
-			// 
-			// button10
-			// 
-			this.button10.Location = new System.Drawing.Point(679, 311);
-			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(146, 23);
-			this.button10.TabIndex = 23;
-			this.button10.Text = "Загрузить";
-			this.button10.UseVisualStyleBackColor = true;
+			this.bLoadScene.Location = new System.Drawing.Point(679, 173);
+			this.bLoadScene.Name = "bLoadScene";
+			this.bLoadScene.Size = new System.Drawing.Size(146, 23);
+			this.bLoadScene.TabIndex = 23;
+			this.bLoadScene.Text = "Загрузить";
+			this.bLoadScene.UseVisualStyleBackColor = true;
+			this.bLoadScene.Click += new System.EventHandler(this.bLoadScene_Click);
 			// 
 			// label3
 			// 
@@ -250,23 +245,24 @@ namespace SceneConstructor
 			this.bEditMetk.UseVisualStyleBackColor = true;
 			this.bEditMetk.Click += new System.EventHandler(this.bEditMetk_Click);
 			// 
-			// button13
+			// bDeleteUsing
 			// 
-			this.button13.Location = new System.Drawing.Point(350, 449);
-			this.button13.Name = "button13";
-			this.button13.Size = new System.Drawing.Size(154, 23);
-			this.button13.TabIndex = 36;
-			this.button13.Text = "Удалить";
-			this.button13.UseVisualStyleBackColor = true;
+			this.bDeleteUsing.Location = new System.Drawing.Point(350, 478);
+			this.bDeleteUsing.Name = "bDeleteUsing";
+			this.bDeleteUsing.Size = new System.Drawing.Size(154, 23);
+			this.bDeleteUsing.TabIndex = 36;
+			this.bDeleteUsing.Text = "Удалить";
+			this.bDeleteUsing.UseVisualStyleBackColor = true;
 			// 
-			// button14
+			// bAddUsing
 			// 
-			this.button14.Location = new System.Drawing.Point(350, 420);
-			this.button14.Name = "button14";
-			this.button14.Size = new System.Drawing.Size(154, 23);
-			this.button14.TabIndex = 35;
-			this.button14.Text = "Добавить переключатель";
-			this.button14.UseVisualStyleBackColor = true;
+			this.bAddUsing.Location = new System.Drawing.Point(350, 420);
+			this.bAddUsing.Name = "bAddUsing";
+			this.bAddUsing.Size = new System.Drawing.Size(154, 23);
+			this.bAddUsing.TabIndex = 35;
+			this.bAddUsing.Text = "Добавить переключатель";
+			this.bAddUsing.UseVisualStyleBackColor = true;
+			this.bAddUsing.Click += new System.EventHandler(this.bAddUsing_Click);
 			// 
 			// bDeleteMetk
 			// 
@@ -288,15 +284,41 @@ namespace SceneConstructor
 			this.bDeleteModel.UseVisualStyleBackColor = true;
 			this.bDeleteModel.Click += new System.EventHandler(this.bDeleteModel_Click);
 			// 
+			// bEditUsing
+			// 
+			this.bEditUsing.Location = new System.Drawing.Point(350, 449);
+			this.bEditUsing.Name = "bEditUsing";
+			this.bEditUsing.Size = new System.Drawing.Size(154, 23);
+			this.bEditUsing.TabIndex = 39;
+			this.bEditUsing.Text = "Редактировать";
+			this.bEditUsing.UseVisualStyleBackColor = true;
+			this.bEditUsing.Click += new System.EventHandler(this.bEditUsing_Click);
+			// 
+			// bSaveAs
+			// 
+			this.bSaveAs.Location = new System.Drawing.Point(679, 144);
+			this.bSaveAs.Name = "bSaveAs";
+			this.bSaveAs.Size = new System.Drawing.Size(146, 23);
+			this.bSaveAs.TabIndex = 40;
+			this.bSaveAs.Text = "Сохранить как";
+			this.bSaveAs.UseVisualStyleBackColor = true;
+			this.bSaveAs.Click += new System.EventHandler(this.bSaveAs_Click);
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
 			// EditorScene
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(836, 508);
+			this.Controls.Add(this.bSaveAs);
+			this.Controls.Add(this.bEditUsing);
 			this.Controls.Add(this.bDeleteMetk);
 			this.Controls.Add(this.bDeleteModel);
-			this.Controls.Add(this.button13);
-			this.Controls.Add(this.button14);
+			this.Controls.Add(this.bDeleteUsing);
+			this.Controls.Add(this.bAddUsing);
 			this.Controls.Add(this.bEditMetk);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.lbAction);
@@ -306,11 +328,10 @@ namespace SceneConstructor
 			this.Controls.Add(this.bEditModel);
 			this.Controls.Add(this.bAddModel);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.button10);
-			this.Controls.Add(this.button9);
+			this.Controls.Add(this.bLoadScene);
 			this.Controls.Add(this.bUploadFTP);
 			this.Controls.Add(this.button8);
-			this.Controls.Add(this.button7);
+			this.Controls.Add(this.bSave);
 			this.Controls.Add(this.bPreVision);
 			this.Controls.Add(this.button4);
 			this.Controls.Add(this.button3);
@@ -335,11 +356,10 @@ namespace SceneConstructor
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button bPreVision;
-		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Button bSave;
 		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Button bUploadFTP;
-		private System.Windows.Forms.Button button9;
-		private System.Windows.Forms.Button button10;
+		private System.Windows.Forms.Button bLoadScene;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button bAddModel;
 		private System.Windows.Forms.Button bEditModel;
@@ -349,9 +369,12 @@ namespace SceneConstructor
 		private System.Windows.Forms.ListBox lbAction;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button bEditMetk;
-		private System.Windows.Forms.Button button13;
-		private System.Windows.Forms.Button button14;
+		private System.Windows.Forms.Button bDeleteUsing;
+		private System.Windows.Forms.Button bAddUsing;
 		private System.Windows.Forms.Button bDeleteMetk;
 		private System.Windows.Forms.Button bDeleteModel;
+		private System.Windows.Forms.Button bEditUsing;
+		private System.Windows.Forms.Button bSaveAs;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 	}
 }
