@@ -64,6 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionU.cs" />
+    <Compile Include="AddAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAction.Designer.cs">
+      <DependentUpon>AddAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddActionSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddActionSelect.Designer.cs">
+      <DependentUpon>AddActionSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEnt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     <Compile Include="WEB.Designer.cs">
       <DependentUpon>WEB.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAction.resx">
+      <DependentUpon>AddAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddActionSelect.resx">
+      <DependentUpon>AddActionSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEnt.resx">
       <DependentUpon>AddEnt.cs</DependentUpon>
     </EmbeddedResource>

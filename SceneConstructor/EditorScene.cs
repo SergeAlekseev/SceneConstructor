@@ -226,5 +226,15 @@ namespace SceneConstructor
 			else
 				return;
 		}
+
+		private void bAddAction_Click(object sender, EventArgs e)
+		{
+			if (lbUsing.SelectedItem != null)
+			{
+				AddActionSelect newForm = new AddActionSelect(lbUsing.SelectedItem as Using, scene);
+				newForm.Owner = this;
+				newForm.ShowDialog();
+			}
+		}
 	}
 }

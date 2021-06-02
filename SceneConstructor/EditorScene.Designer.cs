@@ -32,8 +32,8 @@ namespace SceneConstructor
 			this.bAddMetk = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.bAddAction = new System.Windows.Forms.Button();
+			this.bEditAction = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.bPreVision = new System.Windows.Forms.Button();
 			this.bSave = new System.Windows.Forms.Button();
@@ -86,23 +86,24 @@ namespace SceneConstructor
 			this.label2.TabIndex = 13;
 			this.label2.Text = "Действия переключателя";
 			// 
-			// button2
+			// bAddAction
 			// 
-			this.button2.Location = new System.Drawing.Point(519, 420);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(154, 23);
-			this.button2.TabIndex = 14;
-			this.button2.Text = "Добавить действие";
-			this.button2.UseVisualStyleBackColor = true;
+			this.bAddAction.Location = new System.Drawing.Point(519, 420);
+			this.bAddAction.Name = "bAddAction";
+			this.bAddAction.Size = new System.Drawing.Size(154, 23);
+			this.bAddAction.TabIndex = 14;
+			this.bAddAction.Text = "Добавить действие";
+			this.bAddAction.UseVisualStyleBackColor = true;
+			this.bAddAction.Click += new System.EventHandler(this.bAddAction_Click);
 			// 
-			// button3
+			// bEditAction
 			// 
-			this.button3.Location = new System.Drawing.Point(519, 449);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(154, 23);
-			this.button3.TabIndex = 15;
-			this.button3.Text = "Редактировать";
-			this.button3.UseVisualStyleBackColor = true;
+			this.bEditAction.Location = new System.Drawing.Point(519, 449);
+			this.bEditAction.Name = "bEditAction";
+			this.bEditAction.Size = new System.Drawing.Size(154, 23);
+			this.bEditAction.TabIndex = 15;
+			this.bEditAction.Text = "Редактировать";
+			this.bEditAction.UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
@@ -144,7 +145,7 @@ namespace SceneConstructor
 			// 
 			// bUploadFTP
 			// 
-			this.bUploadFTP.Location = new System.Drawing.Point(679, 340);
+			this.bUploadFTP.Location = new System.Drawing.Point(678, 388);
 			this.bUploadFTP.Name = "bUploadFTP";
 			this.bUploadFTP.Size = new System.Drawing.Size(146, 23);
 			this.bUploadFTP.TabIndex = 21;
@@ -334,8 +335,8 @@ namespace SceneConstructor
 			this.Controls.Add(this.bSave);
 			this.Controls.Add(this.bPreVision);
 			this.Controls.Add(this.button4);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.bEditAction);
+			this.Controls.Add(this.bAddAction);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.bAddMetk);
@@ -352,8 +353,8 @@ namespace SceneConstructor
 		private System.Windows.Forms.Button bAddMetk;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button bAddAction;
+		private System.Windows.Forms.Button bEditAction;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button bPreVision;
 		private System.Windows.Forms.Button bSave;

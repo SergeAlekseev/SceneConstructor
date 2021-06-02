@@ -10,7 +10,7 @@ namespace SceneConstructor
 
 
 		[JsonExtensionData]
-		Dictionary<string, object> fields = new Dictionary<string, object>();
+		public Dictionary<string, object> fields = new Dictionary<string, object>();
 
 		public override string ToString() { return name; }
 	}
