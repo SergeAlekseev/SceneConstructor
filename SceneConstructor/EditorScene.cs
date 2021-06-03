@@ -232,8 +232,32 @@ namespace SceneConstructor
 			if (lbUsing.SelectedItem != null)
 			{
 				AddActionSelect newForm = new AddActionSelect(lbUsing.SelectedItem as Using, scene);
+				newForm.FormClosed += AddAction_FormClosed;
 				newForm.Owner = this;
 				newForm.ShowDialog();
+			}
+		}
+
+		private void AddAction_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			lbAction.DataSource = null;
+			lbAction.DataSource = (lbUsing.SelectedItem as Using).actions;
+		}
+
+		private void bEditAction_Click(object sender, EventArgs e)
+		{
+			if (lbAction.SelectedItem != null)
+			{
+				
+				ActionType at = scene.getActionType(lbAction.SelectedItem as ActionU);
+				if (at != null)
+				{
+					AddAction newForm = new AddAction(lbAction.SelectedItem as ActionU, at);
+					newForm.FormClosed += AddAction_FormClosed;
+					newForm.Owner = this;
+					newForm.ShowDialog();
+				}
+				else MessageBox.Show("Not this type action");
 			}
 		}
 	}

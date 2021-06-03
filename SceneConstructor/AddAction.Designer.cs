@@ -49,7 +49,7 @@ namespace SceneConstructor
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(324, 506);
+			this.ClientSize = new System.Drawing.Size(324, 302);
 			this.Controls.Add(this.bSave);
 			this.Name = "AddAction";
 			this.Text = "AddAction";

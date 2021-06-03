@@ -83,6 +83,16 @@ namespace SceneConstructor
 
 			return scene;
 		}
+
+		internal ActionType getActionType(ActionU actionU)
+		{
+			foreach (ActionType at in actionTypes) 
+			{
+				if (at.name == actionU.action)
+					return at;
+			}
+			return null;
+		}
 	}
 
 

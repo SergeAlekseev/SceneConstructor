@@ -104,6 +104,7 @@ namespace SceneConstructor
 			this.bEditAction.TabIndex = 15;
 			this.bEditAction.Text = "Редактировать";
 			this.bEditAction.UseVisualStyleBackColor = true;
+			this.bEditAction.Click += new System.EventHandler(this.bEditAction_Click);
 			// 
 			// button4
 			// 
