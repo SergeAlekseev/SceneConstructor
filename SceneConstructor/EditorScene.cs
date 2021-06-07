@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FluentFTP;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,11 +58,32 @@ namespace SceneConstructor
 
 		private void bPreVision_Click(object sender, EventArgs e)
 		{
-
+			bUploadFTP_Click(null, null);
+			WEB newForm = new WEB("https://web1050.craft-host.ru/vr_mode.html" + "?sceneId=" + scene.name);
+			newForm.Owner = this;
+			newForm.Show();
 		}
 
 		private void bUploadFTP_Click(object sender, EventArgs e)
 		{
+			scene.saveScene();
+			uploadAll();
+		}
+
+		private void uploadAll()
+		{
+			FtpClient client = new FtpClient("45.93.200.175");
+
+			client.Credentials = new NetworkCredential("web1050", "ogaxUsp9nn");
+
+			client.Connect();
+
+			// upload a folder and all its files
+			client.UploadDirectory(Environment.CurrentDirectory + @"\scenes", @"/www/web1050.craft-host.ru/scenes", FtpFolderSyncMode.Update);
+			client.UploadDirectory(Environment.CurrentDirectory + @"\resources", @"/www/web1050.craft-host.ru/resources", FtpFolderSyncMode.Update);
+
+
+			client.Disconnect();
 
 		}
 
@@ -258,6 +281,14 @@ namespace SceneConstructor
 					newForm.ShowDialog();
 				}
 				else MessageBox.Show("Not this type action");
+			}
+		}
+
+		private void bDeleteCtion_Click(object sender, EventArgs e)
+		{
+			if (lbAction.SelectedItem != null)
+			{
+				(lbUsing.SelectedItem as Using).actions.Remove(lbAction.SelectedItem as ActionU);
 			}
 		}
 	}

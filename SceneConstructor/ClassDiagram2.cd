@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SceneConstructor.ActionType">
+    <Position X="2" Y="4.5" Width="1.5" />
+    <AssociationLine Name="fields" Type="SceneConstructor.Ent">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.238" Y="-0.924" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActionType.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="fields" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SceneConstructor.ActionU">
+    <Position X="3.75" Y="12" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACABAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActionU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.AddAction">
+    <Position X="9.75" Y="4" Width="3" />
+    <Members>
+      <Field Name="addList" Hidden="true" />
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="edit" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="KeyPressNumber" Hidden="true" />
+      <Method Name="TextChangedNumber" Hidden="true" />
+      <Field Name="yPos" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ADEABAEAQCAAAAAQAACAAAAGAAAAACAAAgAIEwAAAQA=</HashCode>
+      <FileName>AddAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.AddActionSelect">
+    <Position X="7.75" Y="4.75" Width="1.75" />
+    <Members>
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="lbActions" Hidden="true" />
+      <Field Name="tb" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAFAAAACAAAACAAAAACAAAAAIAAAAAQA=</HashCode>
+      <FileName>AddActionSelect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.AddEnt">
+    <Position X="10.25" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="bAdd" Hidden="true" />
+      <Field Name="bDelete" Hidden="true" />
+      <Field Name="bEdit" Hidden="true" />
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="edit" Hidden="true" />
+      <Field Name="gbTypeScene" Hidden="true" />
+      <Method Name="initEdit" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="initLB" Hidden="true" />
+      <Method Name="initNewEnt" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="lbEnt" Hidden="true" />
+      <Method Name="NewForm_FormClosed" Hidden="true" />
+      <Field Name="radioButton1" Hidden="true" />
+      <Method Name="radioButton1_CheckedChanged" Hidden="true" />
+      <Field Name="radioButton2" Hidden="true" />
+      <Field Name="radioButton3" Hidden="true" />
+      <Field Name="radioButton4" Hidden="true" />
+      <Field Name="tb" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABCAAAAiQCAEAhAAAACAAAAiAAgAACAAZEAACgAAgQI=</HashCode>
+      <FileName>AddEnt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.AddJS">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="bAdd" Hidden="true" />
+      <Field Name="bDelete" Hidden="true" />
+      <Field Name="bEdit" Hidden="true" />
+      <Field Name="bSelectJS" Hidden="true" />
+      <Field Name="bSelectModel" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="edit" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="lbEnt" Hidden="true" />
+      <Method Name="lbInit" Hidden="true" />
+      <Method Name="listBox1_SelectedIndexChanged" Hidden="true" />
+      <Method Name="NewForm_FormClosed" Hidden="true" />
+      <Field Name="openFileDialog1" Hidden="true" />
+      <Field Name="tb" Hidden="true" />
+      <Field Name="textBox1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAWCAEAhAAABCAQIAiAAAEAAAAVEAAAhAAAAA=</HashCode>
+      <FileName>AddJS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.AddMarker">
+    <Position X="8.75" Y="11" Width="2.5" />
+    <Members>
+      <Method Name="AddMarker" Hidden="true" />
+      <Field Name="bSelectJS" Hidden="true" />
+      <Field Name="button1" Hidden="true" />
+      <Field Name="button2" Hidden="true" />
+      <Method Name="button2_Click" Hidden="true" />
+      <Field Name="button3" Hidden="true" />
+      <Method Name="button3_Click" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="edit" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Method Name="init" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="openFileDialog1" Hidden="true" />
+      <Field Name="openFileDialog2" Hidden="true" />
+      <Field Name="openFileDialog3" Hidden="true" />
+      <Field Name="radioButton1" Hidden="true" />
+      <Field Name="radioButton2" Hidden="true" />
+      <Field Name="radioButton3" Hidden="true" />
+      <Field Name="tb" Hidden="true" />
+      <Field Name="textBox1" Hidden="true" />
+      <Field Name="textBox2" Hidden="true" />
+      <Field Name="textBox3" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EDAAAAAAACAAgBABAACAQIBCAAA4AAIAEDAAAhAAAAY=</HashCode>
+      <FileName>AddMarker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.AddModel">
+    <Position X="11.75" Y="6.75" Width="2.5" />
+    <Members>
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="bSelectModel" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="edit" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="openFileDialog1" Hidden="true" />
+      <Field Name="tb" Hidden="true" />
+      <Field Name="tbDesc" Hidden="true" />
+      <Field Name="tbSize" Hidden="true" />
+      <Field Name="tbSubtitle" Hidden="true" />
+      <Field Name="tbTitle" Hidden="true" />
+      <Field Name="tbx1" Hidden="true" />
+      <Method Name="tbx1_KeyPress" Hidden="true" />
+      <Field Name="tbx2" Hidden="true" />
+      <Field Name="tby1" Hidden="true" />
+      <Field Name="tby2" Hidden="true" />
+      <Field Name="tbz1" Hidden="true" />
+      <Field Name="tbz2" Hidden="true" />
+      <Field Name="textBox2" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QCAAIAAAEDBMQxABAACAQAACAAAEACAAAAMAAgAAAQA=</HashCode>
+      <FileName>AddModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.AddUsing">
+    <Position X="9.25" Y="8.25" Width="2.25" />
+    <Members>
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="edit" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="tb" Hidden="true" />
+      <Field Name="tbx1" Hidden="true" />
+      <Method Name="tbx1_KeyPress" Hidden="true" />
+      <Method Name="tbx1_TextChanged" Hidden="true" />
+      <Field Name="tbx2" Hidden="true" />
+      <Field Name="tbx3" Hidden="true" />
+      <Field Name="tby1" Hidden="true" />
+      <Field Name="tby2" Hidden="true" />
+      <Field Name="tby3" Hidden="true" />
+      <Field Name="tbz1" Hidden="true" />
+      <Field Name="tbz2" Hidden="true" />
+      <Field Name="tbz3" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAgCBoARAAAACAAEACAAAAACAAAAAAAgAAAQA=</HashCode>
+      <FileName>AddUsing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.CreateScene">
+    <Position X="4.25" Y="0.75" Width="2" />
+    <Members>
+      <Field Name="bDelete" Hidden="true" />
+      <Field Name="bEdit" Hidden="true" />
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="bSelectJS" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="CreateScene" Hidden="true" />
+      <Method Name="CreateScene_FormClosing" Hidden="true" />
+      <Method Name="CreateScene_Load" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="gbTypeScene" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="lbActions" Hidden="true" />
+      <Method Name="NewForm_FormClosed" Hidden="true" />
+      <Field Name="openFileDialog1" Hidden="true" />
+      <Field Name="openFileDialog2" Hidden="true" />
+      <Field Name="radioButton1" Hidden="true" />
+      <Method Name="radioButton1_CheckedChanged" Hidden="true" />
+      <Field Name="radioButton2" Hidden="true" />
+      <Field Name="radioButton3" Hidden="true" />
+      <Field Name="tb" Hidden="true" />
+      <Field Name="textBox1" Hidden="true" />
+      <Field Name="textBox2" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAQDAAAFAAAACAQIAiAAAAACCAdEAAABAAgQI=</HashCode>
+      <FileName>CreateScene.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="scene" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SceneConstructor.EditorScene">
+    <Position X="5.25" Y="6.5" Width="2.25" />
+    <Members>
+      <Method Name="AddAction_FormClosed" Hidden="true" />
+      <Method Name="AddModel_FormClosed" Hidden="true" />
+      <Method Name="AddUsing_FormClosed" Hidden="true" />
+      <Field Name="bAddAction" Hidden="true" />
+      <Field Name="bAddMetk" Hidden="true" />
+      <Field Name="bAddModel" Hidden="true" />
+      <Field Name="bAddUsing" Hidden="true" />
+      <Field Name="bDeleteMetk" Hidden="true" />
+      <Field Name="bDeleteModel" Hidden="true" />
+      <Field Name="bDeleteUsing" Hidden="true" />
+      <Field Name="bEditAction" Hidden="true" />
+      <Field Name="bEditMetk" Hidden="true" />
+      <Field Name="bEditModel" Hidden="true" />
+      <Field Name="bEditUsing" Hidden="true" />
+      <Field Name="bLoadScene" Hidden="true" />
+      <Field Name="bPreVision" Hidden="true" />
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="bSaveAs" Hidden="true" />
+      <Field Name="bUploadFTP" Hidden="true" />
+      <Field Name="button4" Hidden="true" />
+      <Field Name="button8" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="EditorScene" Hidden="true" />
+      <Method Name="EditorScene_FormClosing" Hidden="true" />
+      <Method Name="init" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="lbAction" Hidden="true" />
+      <Field Name="lbMetk" Hidden="true" />
+      <Method Name="lbMetk_SelectedIndexChanged" Hidden="true" />
+      <Field Name="lbModel" Hidden="true" />
+      <Method Name="lbModel_SelectedIndexChanged" Hidden="true" />
+      <Field Name="lbUsing" Hidden="true" />
+      <Method Name="lbUsing_SelectedIndexChanged" Hidden="true" />
+      <Method Name="Marker_FormClosed" Hidden="true" />
+      <Field Name="openFileDialog1" Hidden="true" />
+    </Members>
+    <AssociationLine Name="scene" Type="SceneConstructor.Scene" ManuallyRouted="true">
+      <Path>
+        <Point X="6.5" Y="6.5" />
+        <Point X="6.5" Y="5.725" />
+        <Point X="3.88" Y="5.725" />
+        <Point X="3.88" Y="3.137" />
+        <Point X="2.75" Y="3.137" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACEAAgMqBFBFAAGAOAQpACAEUIASMABBgCCYghATA=</HashCode>
+      <FileName>EditorScene.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="scene" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SceneConstructor.Ent">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAEAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Ent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="ents" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SceneConstructor.Marker">
+    <Position X="0.5" Y="6.25" Width="1.75" />
+    <AssociationLine Name="models" Type="SceneConstructor.ModelScene">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.546" Y="0.279" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAEAAQAAAAAAAAAAAAAAAAAAAAIAgA=</HashCode>
+      <FileName>Marker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="models" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SceneConstructor.Model">
+    <Position X="0.5" Y="11.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAIAAEAAAAAEQAAAAAAABAAAAAAEAAAAA=</HashCode>
+      <FileName>Model.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="anchors" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SceneConstructor.ModelScene">
+    <Position X="0.5" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAIAAIAAAgAAAAAAAAAAAAAAIAgA=</HashCode>
+      <FileName>ModelScene.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SceneConstructor.SaveSceneAs">
+    <Position X="6.75" Y="11.75" Width="1.75" />
+    <Members>
+      <Field Name="bSave" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="tbTitle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAADAAABAAAACAAIACAAAAACAAAAAAAAAAAQA=</HashCode>
+      <FileName>SaveSceneAs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.Scene">
+    <Position X="0.5" Y="0.75" Width="2.25" />
+    <AssociationLine Name="markers" Type="SceneConstructor.Marker">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.487" Y="0.329" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAACAAAAAAAAAEAICAAEAEAQAACAAAAAIAA=</HashCode>
+      <FileName>Scene.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="markers" />
+      <Field Name="actionTypes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SceneConstructor.Start">
+    <Position X="5.25" Y="3" Width="1.75" />
+    <Members>
+      <Field Name="bOpen" Hidden="true" />
+      <Field Name="button1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="openFileDialog1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAAAAACAQAACQAAIAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Start.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneConstructor.Using">
+    <Position X="3" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAACAkAAABAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Using.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="actions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SceneConstructor.WEB">
+    <Position X="11" Y="10" Width="3.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAgACAAAACAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WEB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

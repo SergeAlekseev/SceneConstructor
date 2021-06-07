@@ -114,6 +114,7 @@ namespace SceneConstructor
 			this.button4.TabIndex = 16;
 			this.button4.Text = "Удалить";
 			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.bDeleteCtion_Click);
 			// 
 			// bPreVision
 			// 

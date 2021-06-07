@@ -59,7 +59,7 @@ namespace SceneConstructor
 			}
 		}
 
-		private void bSelectJS_Click(object sender, EventArgs e)
+		private void ФсешщтЫудусе(object sender, EventArgs e)
 		{
 			if (tb.Text != "")
 			{
@@ -81,7 +81,7 @@ namespace SceneConstructor
 			else MessageBox.Show("No name");
 		}
 
-		private void radioButton2_CheckedChanged(object sender, EventArgs e)
+		private void rbType_CheckedChanged(object sender, EventArgs e)
 		{
 			if (radioButton2.Checked)
 			{
@@ -121,7 +121,7 @@ namespace SceneConstructor
 			}
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void bSelectFIle_Click(object sender, EventArgs e)
 		{
 			saveFileMetk(openFileDialog1, textBox1);
 		}

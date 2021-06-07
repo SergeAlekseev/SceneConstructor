@@ -12,7 +12,7 @@ namespace SceneConstructor
 			openFileDialog1.Filter = "JSON files(*.json)|*.json";
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void bCreate_Click(object sender, EventArgs e)
 		{
 			Hide();
 			CreateScene newForm = new CreateScene();

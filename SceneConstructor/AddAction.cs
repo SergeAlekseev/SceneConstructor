@@ -254,10 +254,8 @@ namespace SceneConstructor
 							};
 							newForm.ShowDialog();
 						}
-						else MessageBox.Show("Not this type action");
+						else MessageBox.Show("Not select");
 					};
-
-					yPos += 35;
 
 					yPos += 35;
 
@@ -265,6 +263,14 @@ namespace SceneConstructor
 					Button bDelete = new Button();
 					bDelete.Text = "Удалить";
 					bDelete.Location = new Point(142, yPos);
+					bDelete.Click += (s, e) =>
+					{
+						if (listBox.SelectedItem != null)
+						{
+							entList.Remove(listBox.SelectedItem as Dictionary<string, object>);
+						}
+						else MessageBox.Show("Not select");
+					};
 
 					yPos += 35;
 

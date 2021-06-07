@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SceneConstructor
 {
@@ -66,7 +63,7 @@ namespace SceneConstructor
 
 		public static Scene openScene(string filename)
 		{
-			string fileText = System.IO.File.ReadAllText(filename);
+			string fileText = File.ReadAllText(filename);
 			Scene scene = JsonConvert.DeserializeObject<Scene>(fileText);
 			foreach (Marker marker in scene.markers)
 			{
@@ -74,7 +71,7 @@ namespace SceneConstructor
 				{
 					try
 					{
-						string fileModelText = System.IO.File.ReadAllText(Environment.CurrentDirectory + "\\resources\\models\\" + model.id + ".json");
+						string fileModelText = File.ReadAllText(Environment.CurrentDirectory + "\\resources\\models\\" + model.id + ".json");
 						model.model = JsonConvert.DeserializeObject<Model>(fileModelText);
 					}
 					catch { }

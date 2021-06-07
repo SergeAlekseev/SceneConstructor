@@ -85,7 +85,7 @@ namespace SceneConstructor
 			this.radioButton3.TabStop = true;
 			this.radioButton3.Text = "Hiro";
 			this.radioButton3.UseVisualStyleBackColor = true;
-			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+			this.radioButton3.CheckedChanged += new System.EventHandler(this.rbType_CheckedChanged);
 			// 
 			// radioButton2
 			// 
@@ -96,7 +96,7 @@ namespace SceneConstructor
 			this.radioButton2.TabIndex = 1;
 			this.radioButton2.Text = "Свой маркер";
 			this.radioButton2.UseVisualStyleBackColor = true;
-			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+			this.radioButton2.CheckedChanged += new System.EventHandler(this.rbType_CheckedChanged);
 			// 
 			// textBox1
 			// 
@@ -123,7 +123,7 @@ namespace SceneConstructor
 			this.button1.TabIndex = 11;
 			this.button1.Text = "Выбор..";
 			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.button1.Click += new System.EventHandler(this.bSelectFIle_Click);
 			// 
 			// textBox2
 			// 
@@ -187,7 +187,7 @@ namespace SceneConstructor
 			this.bSelectJS.TabIndex = 20;
 			this.bSelectJS.Text = "Готово";
 			this.bSelectJS.UseVisualStyleBackColor = true;
-			this.bSelectJS.Click += new System.EventHandler(this.bSelectJS_Click);
+			this.bSelectJS.Click += new System.EventHandler(this.ФсешщтЫудусе);
 			// 
 			// label10
 			// 
