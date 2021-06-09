@@ -1,5 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using FluentFTP;
+using Newtonsoft.Json;
 using System;
+using System.Net;
 using System.Windows.Forms;
 
 namespace SceneConstructor
@@ -10,6 +12,15 @@ namespace SceneConstructor
 		{
 			InitializeComponent();
 			openFileDialog1.Filter = "JSON files(*.json)|*.json";
+
+			FtpClient client = new FtpClient("45.93.200.175");
+
+			client.Credentials = new NetworkCredential("web1050", "ogaxUsp9nn");
+
+			client.Connect();
+
+			client.DownloadFile(Environment.CurrentDirectory + "\\resources\\vr.html", @"/www/web1050.craft-host.ru/resources/vr.html", FtpLocalExists.Overwrite);
+			client.DownloadFile(Environment.CurrentDirectory + "\\resources\\ar.html", @"/www/web1050.craft-host.ru/resources/ar.html", FtpLocalExists.Overwrite);
 		}
 
 		private void bCreate_Click(object sender, EventArgs e)
@@ -43,6 +54,9 @@ namespace SceneConstructor
 				return;
 		}
 
+		private void Start_Load(object sender, EventArgs e)
+		{
 
+		}
 	}
 }

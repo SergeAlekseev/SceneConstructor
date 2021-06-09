@@ -38,6 +38,7 @@ namespace SceneConstructor
 			this.ClientSize = new System.Drawing.Size(800, 537);
 			this.Name = "WEB";
 			this.Text = "WEB";
+			this.Load += new System.EventHandler(this.WEB_Load);
 			this.ResumeLayout(false);
 
 		}

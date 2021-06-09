@@ -18,6 +18,8 @@ namespace SceneConstructor
 	{
 		Scene scene;
 
+		WEB web;
+
 		public EditorScene(Scene scene)
 		{
 			InitializeComponent();
@@ -59,9 +61,20 @@ namespace SceneConstructor
 		private void bPreVision_Click(object sender, EventArgs e)
 		{
 			bUploadFTP_Click(null, null);
-			WEB newForm = new WEB("https://web1050.craft-host.ru/vr_mode.html" + "?sceneId=" + scene.name);
-			newForm.Owner = this;
-			newForm.Show();
+			if (web == null)
+			{
+				web = new WEB("https://web1050.craft-host.ru/vr_mode.html" + "?sceneId=" + scene.name);
+				web.FormClosed += Web_FormClosed;
+				web.Owner = this;
+				web.Show();
+			}
+			else
+				web.refreshPage();
+		}
+
+		private void Web_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			web = null;
 		}
 
 		private void bUploadFTP_Click(object sender, EventArgs e)
@@ -79,8 +92,12 @@ namespace SceneConstructor
 			client.Connect();
 
 			// upload a folder and all its files
-			client.UploadDirectory(Environment.CurrentDirectory + @"\scenes", @"/www/web1050.craft-host.ru/scenes", FtpFolderSyncMode.Update);
-			client.UploadDirectory(Environment.CurrentDirectory + @"\resources", @"/www/web1050.craft-host.ru/resources", FtpFolderSyncMode.Update);
+			client.UploadDirectory(Environment.CurrentDirectory + @"\scenes", @"/www/web1050.craft-host.ru/scenes", FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
+			client.UploadDirectory(Environment.CurrentDirectory + @"\resources", @"/www/web1050.craft-host.ru/resources", FtpFolderSyncMode.Update, FtpRemoteExists.Append);
+
+			client.UploadFile(Environment.CurrentDirectory + "\\vr_mode.html", @"/www/web1050.craft-host.ru/vr_mode.html",FtpRemoteExists.Overwrite);
+			client.UploadFile(Environment.CurrentDirectory + "\\ar_mode.html", @"/www/web1050.craft-host.ru/ar_mode.html", FtpRemoteExists.Overwrite);
+
 
 
 			client.Disconnect();
@@ -168,7 +185,7 @@ namespace SceneConstructor
 		{
 			if (lbModel.SelectedItem != null)
 			{
-				AddModel newForm = new AddModel(lbModel.SelectedItem as ModelScene);
+				AddModel newForm = new AddModel(lbModel.SelectedItem as ModelScene, web);
 				newForm.FormClosed += AddModel_FormClosed;
 				newForm.Owner = this;
 				newForm.ShowDialog();
@@ -216,7 +233,7 @@ namespace SceneConstructor
 		{
 			if (lbUsing.SelectedItem != null)
 			{
-				AddUsing newForm = new AddUsing(lbUsing.SelectedItem as Using);
+				AddUsing newForm = new AddUsing(lbUsing.SelectedItem as Using,web);
 				newForm.FormClosed += AddUsing_FormClosed;
 				newForm.Owner = this;
 				newForm.ShowDialog();
@@ -290,6 +307,16 @@ namespace SceneConstructor
 			{
 				(lbUsing.SelectedItem as Using).actions.Remove(lbAction.SelectedItem as ActionU);
 			}
+			AddAction_FormClosed(null, null);
+		}
+
+		private void bDeleteUsing_Click(object sender, EventArgs e)
+		{
+			if (lbUsing.SelectedItem != null)
+			{
+				(lbModel.SelectedItem as ModelScene).model.anchors.Remove(lbUsing.SelectedItem as Using);
+			}
+			AddUsing_FormClosed(null, null);
 		}
 	}
 }

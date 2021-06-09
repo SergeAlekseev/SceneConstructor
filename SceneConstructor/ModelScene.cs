@@ -13,10 +13,18 @@ namespace SceneConstructor
 		public Position size = new Position();
 		public Position position = new Position();
 		public Position markerOffset = new Position();
+		public string GUID = "";
+
+		
 
 
 		[JsonIgnore]
 		public Model model = new Model();
+
+		public ModelScene()
+		{
+			GUID = Guid.NewGuid().ToString();
+		}
 
 
 		public override string ToString() { return id; }

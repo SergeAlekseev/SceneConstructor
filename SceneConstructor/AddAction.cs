@@ -118,7 +118,7 @@ namespace SceneConstructor
 					if (fields.TryGetValue(ent.Name, out v))
 						textBox.Text = (string)v;
 					else
-					fields.Add(ent.Name, "");
+						fields.Add(ent.Name, "");
 
 					textBox.TextChanged += (s, e) =>
 					{
@@ -183,9 +183,18 @@ namespace SceneConstructor
 					fields.TryGetValue(ent.Name, out v);
 					if (fields.TryGetValue(ent.Name, out v))
 					{
-						textBox1.Text = "" + ((JObject)v).GetValue("x");
-						textBox2.Text = "" + ((JObject)v).GetValue("y");
-						textBox3.Text = "" + ((JObject)v).GetValue("z");
+						try
+						{
+							textBox1.Text = "" + ((JObject)v).GetValue("x");
+							textBox2.Text = "" + ((JObject)v).GetValue("y");
+							textBox3.Text = "" + ((JObject)v).GetValue("z");
+						}
+						catch
+						{
+							textBox1.Text = "" + ((Position)v).x;
+							textBox2.Text = "" + ((Position)v).y;
+							textBox3.Text = "" + ((Position)v).z;
+						}
 					}
 					else
 						fields.Add(ent.Name, pos);
@@ -204,7 +213,16 @@ namespace SceneConstructor
 					object v;
 					fields.TryGetValue(ent.Name, out v);
 					if (fields.TryGetValue(ent.Name, out v))
-						entList = (v as JArray).ToObject<List<Dictionary<string, object>>>();
+					{
+						try
+						{
+							entList = (v as JArray).ToObject<List<Dictionary<string, object>>>();
+						}
+						catch 
+						{
+							entList = (List<Dictionary<string, object>>)v;
+						}
+					}
 					else
 					{
 						entList = new List<Dictionary<string, object>>();
@@ -287,11 +305,13 @@ namespace SceneConstructor
 
 		private void KeyPressNumber(object sender, KeyPressEventArgs e)
 		{
-			char number = e.KeyChar;
-			if ((!Char.IsDigit(number) && number != 8 && number != 44) || ((sender as TextBox).Text.Contains(",") && number == 44))
+			if (((TextBox)sender).Text.Contains('-'))
 			{
-				e.Handled = true;
+				if (!((Char.IsDigit(e.KeyChar) && ((TextBox)sender).SelectionStart > 0) || e.KeyChar == (char)Keys.Back || (!(sender as TextBox).Text.Contains(",") && e.KeyChar == ',')))
+					e.Handled = true;
 			}
+			else if (!(Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || (e.KeyChar == '-' && ((TextBox)sender).SelectionStart == 0) || (!(sender as TextBox).Text.Contains(",") && e.KeyChar == ',')))
+				e.Handled = true;
 		}
 
 		private void TextChangedNumber(object sender, EventArgs e)

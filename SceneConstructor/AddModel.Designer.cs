@@ -143,8 +143,8 @@ namespace SceneConstructor
 			this.tbx1.Size = new System.Drawing.Size(42, 20);
 			this.tbx1.TabIndex = 17;
 			this.tbx1.Text = "0";
-			this.tbx1.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
 			this.tbx1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
+			this.tbx1.Leave += new System.EventHandler(this.AddModel_TextChanged);
 			// 
 			// tby1
 			// 
@@ -153,8 +153,8 @@ namespace SceneConstructor
 			this.tby1.Size = new System.Drawing.Size(42, 20);
 			this.tby1.TabIndex = 19;
 			this.tby1.Text = "0";
-			this.tby1.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
 			this.tby1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
+			this.tby1.Leave += new System.EventHandler(this.AddModel_TextChanged);
 			// 
 			// tbz1
 			// 
@@ -163,8 +163,8 @@ namespace SceneConstructor
 			this.tbz1.Size = new System.Drawing.Size(42, 20);
 			this.tbz1.TabIndex = 20;
 			this.tbz1.Text = "0";
-			this.tbz1.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
 			this.tbz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
+			this.tbz1.Leave += new System.EventHandler(this.AddModel_TextChanged);
 			// 
 			// label5
 			// 
@@ -182,8 +182,8 @@ namespace SceneConstructor
 			this.tbz2.Size = new System.Drawing.Size(42, 20);
 			this.tbz2.TabIndex = 25;
 			this.tbz2.Text = "0";
-			this.tbz2.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
 			this.tbz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
+			this.tbz2.Leave += new System.EventHandler(this.AddModel_TextChanged);
 			// 
 			// tby2
 			// 
@@ -192,8 +192,8 @@ namespace SceneConstructor
 			this.tby2.Size = new System.Drawing.Size(42, 20);
 			this.tby2.TabIndex = 24;
 			this.tby2.Text = "0";
-			this.tby2.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
 			this.tby2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
+			this.tby2.Leave += new System.EventHandler(this.AddModel_TextChanged);
 			// 
 			// tbx2
 			// 
@@ -202,8 +202,8 @@ namespace SceneConstructor
 			this.tbx2.Size = new System.Drawing.Size(42, 20);
 			this.tbx2.TabIndex = 23;
 			this.tbx2.Text = "0";
-			this.tbx2.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
 			this.tbx2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
+			this.tbx2.Leave += new System.EventHandler(this.AddModel_TextChanged);
 			// 
 			// tbSize
 			// 
@@ -211,9 +211,9 @@ namespace SceneConstructor
 			this.tbSize.Name = "tbSize";
 			this.tbSize.Size = new System.Drawing.Size(160, 20);
 			this.tbSize.TabIndex = 27;
-			this.tbSize.Text = "0";
-			this.tbSize.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
+			this.tbSize.Text = "1";
 			this.tbSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
+			this.tbSize.Leave += new System.EventHandler(this.AddModel_TextChanged);
 			// 
 			// label6
 			// 

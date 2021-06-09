@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SceneConstructor
 {
@@ -9,7 +10,12 @@ namespace SceneConstructor
 		public Position PositionAfter = new Position();
 		public string id = "";
 		public List<ActionU> actions = new List<ActionU>();
+		public string GUID = "";
 
+		public Using()
+		{
+			GUID = Guid.NewGuid().ToString();
+		}
 		public override string ToString() { return id; }
 
 	}

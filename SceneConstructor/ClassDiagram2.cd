@@ -184,7 +184,7 @@
       <Field Name="textBox2" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>QCAAIAAAEDBMQxABAACAQAACAAAEACAAAAMAAgAAAQA=</HashCode>
+      <HashCode>QCAAIAAAGDBMQxABAECAQAACAAAEACAAAAMAAggAAQA=</HashCode>
       <FileName>AddModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -214,7 +214,7 @@
       <Field Name="tbz3" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>QAAAAAAAgCBoARAAAACAAEACAAAAACAAAAAAAgAAAQA=</HashCode>
+      <HashCode>QAAAAAAAgCBoARAAAECAAEACAAAAACAAAAAAAoggEQA=</HashCode>
       <FileName>AddUsing.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -310,7 +310,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACEAAgMqBFBFAAGAOAQpACAEUIASMABBgCCYghATA=</HashCode>
+      <HashCode>AAACEAAgMqBFBFAAGEOAQpACAEUIATMABBgCCYghQTA=</HashCode>
       <FileName>EditorScene.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -355,7 +355,7 @@
   <Class Name="SceneConstructor.ModelScene">
     <Position X="0.5" Y="8.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAIAAIAAAgAAAAAAAAAAAAAAIAgA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAEAIAAIAAAgAAAAAAAAAAAAAAIAgA=</HashCode>
       <FileName>ModelScene.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -404,14 +404,14 @@
       <Field Name="openFileDialog1" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AIAAAAAAACAAAAAAAACAQAACQAAIAAAAAAAAAAAIAAA=</HashCode>
+      <HashCode>AIAAAAAAACAAAAAABACAQAACQAAIAAAAAAAAAAAIAAA=</HashCode>
       <FileName>Start.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneConstructor.Using">
     <Position X="3" Y="9.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAACAkAAABAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>IABAAAAAAAAAACAkAAABAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Using.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -426,7 +426,7 @@
       <Method Name="InitializeComponent" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAgACAAAACAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQACAAAAAAAgCAAEACAAAEAAAAABAABAAAAAA=</HashCode>
       <FileName>WEB.cs</FileName>
     </TypeIdentifier>
   </Class>

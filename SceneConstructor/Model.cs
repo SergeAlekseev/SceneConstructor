@@ -15,8 +15,11 @@ namespace SceneConstructor
 		public List<Using> anchors = new List<Using>();
 		public List<object> exhibit_components = new List<object>();
 		public List<string> pics = new List<string>();
+		
 
 		public override string ToString() { return title; }
+
+		
 
 	}
 }

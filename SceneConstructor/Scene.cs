@@ -59,6 +59,32 @@ namespace SceneConstructor
 					fileSer.Close();
 				}
 			}
+
+			string fileTextVR = File.ReadAllText(Environment.CurrentDirectory + "\\resources\\vr.html");
+			string[] fileSplitVR = fileTextVR.Split(new string[] { "<head>" }, StringSplitOptions.RemoveEmptyEntries);
+			string vrTextVR = fileSplitVR[0] + " <head> ";
+
+			string fileTextAR = File.ReadAllText(Environment.CurrentDirectory + "\\resources\\ar.html");
+			string[] fileSplitAR = fileTextAR.Split(new string[] { "<head>" }, StringSplitOptions.RemoveEmptyEntries);
+			string vrTextAR = fileSplitAR[0] + " <head> ";
+
+			foreach (ActionType at in actionTypes)
+			{
+				string script = "<script src = \"resources/components/actions/" + at.name + ".js\"></script> ";
+				vrTextVR += script;
+				vrTextAR += script;
+			}
+
+			vrTextVR += fileSplitVR[1];
+			vrTextAR += fileTextAR[1];
+
+			StreamWriter fileVR = File.CreateText(Environment.CurrentDirectory + "\\vr_mode.html");
+			fileVR.Write(vrTextVR);
+			fileVR.Close();
+
+			StreamWriter fileAR = File.CreateText(Environment.CurrentDirectory + "\\ar_mode.html");
+			fileAR.Write(vrTextAR);
+			fileAR.Close();
 		}
 
 		public static Scene openScene(string filename)
@@ -83,7 +109,7 @@ namespace SceneConstructor
 
 		internal ActionType getActionType(ActionU actionU)
 		{
-			foreach (ActionType at in actionTypes) 
+			foreach (ActionType at in actionTypes)
 			{
 				if (at.name == actionU.action)
 					return at;

@@ -68,6 +68,7 @@ namespace SceneConstructor
 			this.Name = "Start";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Start";
+			this.Load += new System.EventHandler(this.Start_Load);
 			this.ResumeLayout(false);
 
 		}

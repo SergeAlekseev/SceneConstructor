@@ -1,0 +1,40 @@
+<html lang="ru-RU">
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="dependencies/aframe-blink-controls.js"></script>
+    <script src="dependencies/aframe-gui.min.js"></script>
+    <script src="resources/components/exhibit.js"></script>
+    <script src="resources/components/scene_loader.js"></script>
+    <script src="dependencies/draco_decoder.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <meta charset="UTF-8" />
+    <title>Виртуальный музей вычислительной техники КГУ - Режим VR</title>
+</head>
+
+<body>
+    <a-scene physics background="color: #212"
+             webxr="referenceSpaceType: local"
+             environment scene_loader="mode: vr" shadow>
+
+        <!-- camera rig -->
+        <a-entity id="player" position="0 1 0">
+            <!-- camera -->
+            <a-entity id="camera" camera wasd-controls look-controls cursor="rayOrigin: mouse" raycaster="objects: [gui-interactable]">
+
+            </a-entity>
+            <!-- hand controls -->
+            <a-entity id="left-hand" sphere-collider="objects: [grabbable]" super-hands hand-controls="hand: left; color: #ffcccc" blink-controls="button: trackpad; snapTurn: true"></a-entity>
+            <a-entity id="right-hand" laser-controls="hand: right" raycaster="objects: [gui-interactable]">
+            </a-entity>
+        </a-entity>
+
+        <!-- Out of the box environment! -->
+        <a-light light="type:directional; castShadow:true;" position="0.01 100.15 70"></a-light>
+    </a-scene>
+</body>
+
+</html>

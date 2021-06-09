@@ -17,6 +17,7 @@ namespace SceneConstructor
 		Marker marker;
 		bool edit;
 		string oldName;
+		WEB web;
 
 
 		public AddModel(Marker marker)
@@ -27,13 +28,15 @@ namespace SceneConstructor
 			openFileDialog1.Filter = "Model file(*.glb)|*.glb";
 		}
 
-		public AddModel(ModelScene modelScene)
+		public AddModel(ModelScene modelScene, WEB web)
 		{
 			InitializeComponent();
 			this.modelScene = modelScene;
 			edit = true;
 			oldName = modelScene.id;
 			tbTitle.Text = modelScene.id;
+			tbDesc.Text = modelScene.model.desc;
+			tbSubtitle.Text = modelScene.model.subtitle;
 			tbx2.Text = "" + modelScene.markerOffset.x;
 			tby2.Text = "" + modelScene.markerOffset.y;
 			tbz2.Text = "" + modelScene.markerOffset.z;
@@ -41,12 +44,39 @@ namespace SceneConstructor
 			tby1.Text = "" + modelScene.position.y;
 			tbz2.Text = "" + modelScene.position.z;
 			tbSize.Text = "" + modelScene.size.x;
-			tbSubtitle.Text = modelScene.model.subtitle;
-			tbSubtitle.Text = modelScene.model.desc;
 			textBox2.Text = modelScene.id + ".glb";
 			openFileDialog1.Filter = "Model file(*.glb)|*.glb";
+
+			this.web = web;
+			if (web != null) 
+			{
+				if (modelScene.GUID == "")
+					modelScene.GUID = Guid.NewGuid().ToString();
+				tbx1.TextChanged += Position_TextChanged;
+				tby1.TextChanged += Position_TextChanged;
+				tbz1.TextChanged += Position_TextChanged;
+				tbSize.TextChanged += Size_TextChanged;
+			}
 		}
 
+		private void Size_TextChanged(object sender, EventArgs e)
+		{
+			double size;
+			Double.TryParse(tbSize.Text, out size);
+			modelScene.size.x = size;
+			modelScene.size.y = size;
+			modelScene.size.z = size;
+			string number = modelScene.size.x.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+			web.executeScriptParam(modelScene.GUID, "scale", "" + modelScene.size.x.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")) + " " + modelScene.size.y.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")) + " " + modelScene.size.z.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")));
+		}
+
+		private void Position_TextChanged(object sender, EventArgs e)
+		{
+			Double.TryParse(tbx1.Text, out modelScene.position.x);
+			Double.TryParse(tby1.Text, out modelScene.position.y);
+			Double.TryParse(tbz1.Text, out modelScene.position.z);
+			web.executeScriptParam(modelScene.GUID, "position", "" + modelScene.position.x.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")) + " "+ modelScene.position.y.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")) + " " + modelScene.position.z.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US")));
+		}												 
 		private void bSelectModel_Click(object sender, EventArgs e)
 		{
 
@@ -83,14 +113,14 @@ namespace SceneConstructor
 					Double.TryParse(tbz2.Text, out modelScene.markerOffset.z);
 					Double.TryParse(tbx1.Text, out modelScene.position.x);
 					Double.TryParse(tby1.Text, out modelScene.position.y);
-					Double.TryParse(tbz2.Text, out modelScene.position.z);
+					Double.TryParse(tbz1.Text, out modelScene.position.z);
 					double size;
 					Double.TryParse(tbSize.Text, out size);
 					modelScene.size.x = size;
 					modelScene.size.y = size;
 					modelScene.size.z = size;
 					modelScene.model.subtitle = tbSubtitle.Text;
-					modelScene.model.desc = tbSubtitle.Text;
+					modelScene.model.desc = tbDesc.Text;
 					if (!edit)
 						marker.models.Add(modelScene);
 					if (openFileDialog1.FileName != "openFileDialog1")
@@ -115,11 +145,13 @@ namespace SceneConstructor
 
 		private void tbx1_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			char number = e.KeyChar;
-			if ((!Char.IsDigit(number) && number != 8 && number != 44) || ((sender as TextBox).Text.Contains(",") && number == 44))
+			if (((TextBox)sender).Text.Contains('-'))
 			{
-				e.Handled = true;
+				if (!((Char.IsDigit(e.KeyChar) && ((TextBox)sender).SelectionStart > 0) || e.KeyChar == (char)Keys.Back || (!(sender as TextBox).Text.Contains(",") && e.KeyChar == ',')))
+					e.Handled = true;
 			}
+			else if (!(Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || (e.KeyChar == '-' && ((TextBox)sender).SelectionStart == 0) || (!(sender as TextBox).Text.Contains(",") && e.KeyChar == ','))  )
+				e.Handled = true;
 		}
 
 		private void AddModel_TextChanged(object sender, EventArgs e)
