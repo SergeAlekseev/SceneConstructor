@@ -34,6 +34,8 @@ namespace SceneConstructor
 			edit = true;
 			oldName = modelScene.id;
 			tbTitle.Text = modelScene.id;
+			tbDesc.Text = modelScene.model.desc;
+			tbSubtitle.Text = modelScene.model.subtitle;
 			tbx2.Text = "" + modelScene.markerOffset.x;
 			tby2.Text = "" + modelScene.markerOffset.y;
 			tbz2.Text = "" + modelScene.markerOffset.z;
@@ -41,8 +43,6 @@ namespace SceneConstructor
 			tby1.Text = "" + modelScene.position.y;
 			tbz2.Text = "" + modelScene.position.z;
 			tbSize.Text = "" + modelScene.size.x;
-			tbSubtitle.Text = modelScene.model.subtitle;
-			tbSubtitle.Text = modelScene.model.desc;
 			textBox2.Text = modelScene.id + ".glb";
 			openFileDialog1.Filter = "Model file(*.glb)|*.glb";
 		}
@@ -90,7 +90,7 @@ namespace SceneConstructor
 					modelScene.size.y = size;
 					modelScene.size.z = size;
 					modelScene.model.subtitle = tbSubtitle.Text;
-					modelScene.model.desc = tbSubtitle.Text;
+					modelScene.model.desc = tbDesc.Text;
 					if (!edit)
 						marker.models.Add(modelScene);
 					if (openFileDialog1.FileName != "openFileDialog1")

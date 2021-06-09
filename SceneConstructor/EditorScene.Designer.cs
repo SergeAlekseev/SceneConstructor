@@ -256,6 +256,7 @@ namespace SceneConstructor
 			this.bDeleteUsing.TabIndex = 36;
 			this.bDeleteUsing.Text = "Удалить";
 			this.bDeleteUsing.UseVisualStyleBackColor = true;
+			this.bDeleteUsing.Click += new System.EventHandler(this.bDeleteUsing_Click);
 			// 
 			// bAddUsing
 			// 

@@ -27,6 +27,16 @@ namespace SceneConstructor
 		{
 			InitializeComponent();
 			this.usingModel = usingModel;
+			tb.Text = usingModel.id;
+			tbx3.Text=""+ usingModel.PositionLine.x;
+			tby3.Text=""+ usingModel.PositionLine.y;
+			tbz3.Text=""+ usingModel.PositionLine.z;
+			tbx2.Text=""+ usingModel.PositionAfter.x;
+			tby2.Text=""+ usingModel.PositionAfter.y;
+			tbz2.Text=""+ usingModel.PositionAfter.z;
+			tbx1.Text=""+ usingModel.Position.x;
+			tby1.Text=""+ usingModel.Position.y;
+			tbz1.Text=""+ usingModel.Position.z;
 			edit = true;
 		}
 
@@ -43,7 +53,7 @@ namespace SceneConstructor
 				Double.TryParse(tbz2.Text, out usingModel.PositionAfter.z);
 				Double.TryParse(tbx1.Text, out usingModel.Position.x);
 				Double.TryParse(tby1.Text, out usingModel.Position.y);
-				Double.TryParse(tbz2.Text, out usingModel.Position.z);
+				Double.TryParse(tbz1.Text, out usingModel.Position.z);
 				if (!edit)
 					modelScene.model.anchors.Add(usingModel);
 				this.Close();
