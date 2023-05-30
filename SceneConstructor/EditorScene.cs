@@ -93,7 +93,7 @@ namespace SceneConstructor
 
 			// upload a folder and all its files
 			client.UploadDirectory(Environment.CurrentDirectory + @"\scenes", @"/www/web1050.craft-host.ru/scenes", FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
-			client.UploadDirectory(Environment.CurrentDirectory + @"\resources", @"/www/web1050.craft-host.ru/resources", FtpFolderSyncMode.Update, FtpRemoteExists.Append);
+			client.UploadDirectory(Environment.CurrentDirectory + @"\resources", @"/www/web1050.craft-host.ru/resources", FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
 
 			client.UploadFile(Environment.CurrentDirectory + "\\vr_mode.html", @"/www/web1050.craft-host.ru/vr_mode.html",FtpRemoteExists.Overwrite);
 			client.UploadFile(Environment.CurrentDirectory + "\\ar_mode.html", @"/www/web1050.craft-host.ru/ar_mode.html", FtpRemoteExists.Overwrite);
@@ -317,6 +317,14 @@ namespace SceneConstructor
 				(lbModel.SelectedItem as ModelScene).model.anchors.Remove(lbUsing.SelectedItem as Using);
 			}
 			AddUsing_FormClosed(null, null);
+		}
+
+		private void bDeleteUsing_Click(object sender, EventArgs e)
+		{
+			if (lbUsing.SelectedItem != null)
+			{
+				(lbModel.SelectedItem as ModelScene).model.anchors.Remove(lbUsing.SelectedItem as Using);
+			}
 		}
 	}
 }
