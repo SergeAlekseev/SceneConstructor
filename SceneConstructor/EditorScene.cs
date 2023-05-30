@@ -318,5 +318,13 @@ namespace SceneConstructor
 			}
 			AddUsing_FormClosed(null, null);
 		}
+
+		private void bDeleteUsing_Click(object sender, EventArgs e)
+		{
+			if (lbUsing.SelectedItem != null)
+			{
+				(lbModel.SelectedItem as ModelScene).model.anchors.Remove(lbUsing.SelectedItem as Using);
+			}
+		}
 	}
 }
