@@ -15,12 +15,12 @@ namespace SceneConstructor
 
 			FtpClient client = new FtpClient("45.93.200.175");
 
-			client.Credentials = new NetworkCredential("web1050", "ogaxUsp9nn");
+			client.Credentials = new NetworkCredential("web3159", "4M6q5H5d2O");
 
 			client.Connect();
 
-			client.DownloadFile(Environment.CurrentDirectory + "\\resources\\vr.html", @"/www/web1050.craft-host.ru/resources/vr.html", FtpLocalExists.Overwrite);
-			client.DownloadFile(Environment.CurrentDirectory + "\\resources\\ar.html", @"/www/web1050.craft-host.ru/resources/ar.html", FtpLocalExists.Overwrite);
+			client.DownloadFile(Environment.CurrentDirectory + "\\resources\\vr.html", @"/www/web3159.craft-host.ru/resources/vr.html", FtpLocalExists.Overwrite);
+			client.DownloadFile(Environment.CurrentDirectory + "\\resources\\ar.html", @"/www/web3159.craft-host.ru/resources/ar.html", FtpLocalExists.Overwrite);
 		}
 
 		private void bCreate_Click(object sender, EventArgs e)

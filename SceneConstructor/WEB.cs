@@ -40,14 +40,5 @@ namespace SceneConstructor
 		{
 		}
 
-		internal void refreshPage()
-		{
-			chromiumWebBrowser1.Reload();
-		}
-
-		private void WEB_Load(object sender, EventArgs e)
-		{
-
-		}
 	}
 }
