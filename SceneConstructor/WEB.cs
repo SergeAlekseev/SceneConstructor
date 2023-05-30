@@ -13,12 +13,8 @@ namespace SceneConstructor
 		{
 			InitializeComponent();
 			this.v = v;
-			chromiumWebBrowser1 = new ChromiumWebBrowser(v)
-			{
-				Dock = DockStyle.Fill
-			};
+			chromiumWebBrowser1 = new ChromiumWebBrowser(v);
 			Controls.Add(chromiumWebBrowser1);
-
 		}
 
 		internal void refreshPage()

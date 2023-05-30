@@ -63,7 +63,7 @@ namespace SceneConstructor
 			bUploadFTP_Click(null, null);
 			if (web == null)
 			{
-				web = new WEB("https://web3159.craft-host.ru/vr_mode.html" + "?sceneId=" + scene.name);
+				web = new WEB("http://web3159.craft-host.ru/vr_mode.html" + "?sceneId=" + scene.name);
 				web.FormClosed += Web_FormClosed;
 				web.Owner = this;
 				web.Show();
@@ -87,7 +87,7 @@ namespace SceneConstructor
 		{
 			FtpClient client = new FtpClient("45.93.200.175");
 
-			client.Credentials = new NetworkCredential("web3159", "ogaxUsp9nn");
+			client.Credentials = new NetworkCredential("web3159", "4M6q5H5d2O");
 
 			client.Connect();
 
