@@ -52,6 +52,20 @@ namespace SceneConstructor
 			this.tbSubtitle = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.tbDesc = new System.Windows.Forms.TextBox();
+			this.tbp1 = new System.Windows.Forms.TrackBar();
+			this.tbp2 = new System.Windows.Forms.TrackBar();
+			this.tbp3 = new System.Windows.Forms.TrackBar();
+			this.tbpm1 = new System.Windows.Forms.TrackBar();
+			this.tbpm2 = new System.Windows.Forms.TrackBar();
+			this.tbpm3 = new System.Windows.Forms.TrackBar();
+			this.tbs = new System.Windows.Forms.TrackBar();
+			((System.ComponentModel.ISupportInitialize)(this.tbp1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbp2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbp3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbpm1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbpm2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbpm3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbs)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -83,12 +97,12 @@ namespace SceneConstructor
 			// 
 			this.tbTitle.Location = new System.Drawing.Point(12, 28);
 			this.tbTitle.Name = "tbTitle";
-			this.tbTitle.Size = new System.Drawing.Size(160, 20);
+			this.tbTitle.Size = new System.Drawing.Size(446, 20);
 			this.tbTitle.TabIndex = 7;
 			// 
 			// bSave
 			// 
-			this.bSave.Location = new System.Drawing.Point(123, 332);
+			this.bSave.Location = new System.Drawing.Point(383, 383);
 			this.bSave.Name = "bSave";
 			this.bSave.Size = new System.Drawing.Size(75, 23);
 			this.bSave.TabIndex = 6;
@@ -99,15 +113,15 @@ namespace SceneConstructor
 			// textBox2
 			// 
 			this.textBox2.Enabled = false;
-			this.textBox2.Location = new System.Drawing.Point(13, 301);
+			this.textBox2.Location = new System.Drawing.Point(16, 352);
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(101, 20);
+			this.textBox2.Size = new System.Drawing.Size(345, 20);
 			this.textBox2.TabIndex = 16;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(10, 280);
+			this.label3.Location = new System.Drawing.Point(13, 331);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(77, 13);
 			this.label3.TabIndex = 15;
@@ -115,7 +129,7 @@ namespace SceneConstructor
 			// 
 			// bSelectModel
 			// 
-			this.bSelectModel.Location = new System.Drawing.Point(123, 299);
+			this.bSelectModel.Location = new System.Drawing.Point(383, 350);
 			this.bSelectModel.Name = "bSelectModel";
 			this.bSelectModel.Size = new System.Drawing.Size(75, 23);
 			this.bSelectModel.TabIndex = 14;
@@ -148,7 +162,7 @@ namespace SceneConstructor
 			// 
 			// tby1
 			// 
-			this.tby1.Location = new System.Drawing.Point(72, 182);
+			this.tby1.Location = new System.Drawing.Point(167, 182);
 			this.tby1.Name = "tby1";
 			this.tby1.Size = new System.Drawing.Size(42, 20);
 			this.tby1.TabIndex = 19;
@@ -158,7 +172,7 @@ namespace SceneConstructor
 			// 
 			// tbz1
 			// 
-			this.tbz1.Location = new System.Drawing.Point(131, 182);
+			this.tbz1.Location = new System.Drawing.Point(319, 182);
 			this.tbz1.Name = "tbz1";
 			this.tbz1.Size = new System.Drawing.Size(42, 20);
 			this.tbz1.TabIndex = 20;
@@ -169,7 +183,7 @@ namespace SceneConstructor
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(10, 205);
+			this.label5.Location = new System.Drawing.Point(10, 230);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(107, 13);
 			this.label5.TabIndex = 22;
@@ -177,7 +191,7 @@ namespace SceneConstructor
 			// 
 			// tbz2
 			// 
-			this.tbz2.Location = new System.Drawing.Point(131, 221);
+			this.tbz2.Location = new System.Drawing.Point(319, 246);
 			this.tbz2.Name = "tbz2";
 			this.tbz2.Size = new System.Drawing.Size(42, 20);
 			this.tbz2.TabIndex = 25;
@@ -187,7 +201,7 @@ namespace SceneConstructor
 			// 
 			// tby2
 			// 
-			this.tby2.Location = new System.Drawing.Point(72, 221);
+			this.tby2.Location = new System.Drawing.Point(167, 246);
 			this.tby2.Name = "tby2";
 			this.tby2.Size = new System.Drawing.Size(42, 20);
 			this.tby2.TabIndex = 24;
@@ -197,7 +211,7 @@ namespace SceneConstructor
 			// 
 			// tbx2
 			// 
-			this.tbx2.Location = new System.Drawing.Point(14, 221);
+			this.tbx2.Location = new System.Drawing.Point(14, 246);
 			this.tbx2.Name = "tbx2";
 			this.tbx2.Size = new System.Drawing.Size(42, 20);
 			this.tbx2.TabIndex = 23;
@@ -207,9 +221,9 @@ namespace SceneConstructor
 			// 
 			// tbSize
 			// 
-			this.tbSize.Location = new System.Drawing.Point(13, 257);
+			this.tbSize.Location = new System.Drawing.Point(16, 308);
 			this.tbSize.Name = "tbSize";
-			this.tbSize.Size = new System.Drawing.Size(160, 20);
+			this.tbSize.Size = new System.Drawing.Size(193, 20);
 			this.tbSize.TabIndex = 27;
 			this.tbSize.Text = "1";
 			this.tbSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
@@ -218,7 +232,7 @@ namespace SceneConstructor
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(9, 241);
+			this.label6.Location = new System.Drawing.Point(12, 292);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(46, 13);
 			this.label6.TabIndex = 26;
@@ -237,7 +251,7 @@ namespace SceneConstructor
 			// 
 			this.tbSubtitle.Location = new System.Drawing.Point(13, 69);
 			this.tbSubtitle.Name = "tbSubtitle";
-			this.tbSubtitle.Size = new System.Drawing.Size(160, 20);
+			this.tbSubtitle.Size = new System.Drawing.Size(445, 20);
 			this.tbSubtitle.TabIndex = 30;
 			// 
 			// label8
@@ -254,14 +268,91 @@ namespace SceneConstructor
 			this.tbDesc.Location = new System.Drawing.Point(13, 108);
 			this.tbDesc.Multiline = true;
 			this.tbDesc.Name = "tbDesc";
-			this.tbDesc.Size = new System.Drawing.Size(160, 55);
+			this.tbDesc.Size = new System.Drawing.Size(445, 55);
 			this.tbDesc.TabIndex = 28;
+			// 
+			// tbp1
+			// 
+			this.tbp1.Location = new System.Drawing.Point(62, 182);
+			this.tbp1.Minimum = -10;
+			this.tbp1.Name = "tbp1";
+			this.tbp1.Size = new System.Drawing.Size(104, 45);
+			this.tbp1.TabIndex = 32;
+			this.tbp1.ValueChanged += new System.EventHandler(this.tbp1_ValueChanged);
+			this.tbp1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbp1_MouseUp);
+			// 
+			// tbp2
+			// 
+			this.tbp2.Location = new System.Drawing.Point(215, 182);
+			this.tbp2.Minimum = -10;
+			this.tbp2.Name = "tbp2";
+			this.tbp2.Size = new System.Drawing.Size(104, 45);
+			this.tbp2.TabIndex = 33;
+			this.tbp2.ValueChanged += new System.EventHandler(this.tbp2_ValueChanged);
+			this.tbp2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbp2_MouseUp);
+			// 
+			// tbp3
+			// 
+			this.tbp3.Location = new System.Drawing.Point(367, 182);
+			this.tbp3.Minimum = -10;
+			this.tbp3.Name = "tbp3";
+			this.tbp3.Size = new System.Drawing.Size(104, 45);
+			this.tbp3.TabIndex = 34;
+			this.tbp3.ValueChanged += new System.EventHandler(this.tbp3_ValueChanged);
+			this.tbp3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbp3_MouseUp);
+			// 
+			// tbpm1
+			// 
+			this.tbpm1.Location = new System.Drawing.Point(62, 246);
+			this.tbpm1.Minimum = -10;
+			this.tbpm1.Name = "tbpm1";
+			this.tbpm1.Size = new System.Drawing.Size(104, 45);
+			this.tbpm1.TabIndex = 35;
+			this.tbpm1.ValueChanged += new System.EventHandler(this.tbpm1_ValueChanged);
+			this.tbpm1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbpm1_MouseUp);
+			// 
+			// tbpm2
+			// 
+			this.tbpm2.Location = new System.Drawing.Point(215, 246);
+			this.tbpm2.Minimum = -10;
+			this.tbpm2.Name = "tbpm2";
+			this.tbpm2.Size = new System.Drawing.Size(104, 45);
+			this.tbpm2.TabIndex = 36;
+			this.tbpm2.ValueChanged += new System.EventHandler(this.tbpm2_ValueChanged);
+			this.tbpm2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbpm2_MouseUp);
+			// 
+			// tbpm3
+			// 
+			this.tbpm3.Location = new System.Drawing.Point(367, 246);
+			this.tbpm3.Minimum = -10;
+			this.tbpm3.Name = "tbpm3";
+			this.tbpm3.Size = new System.Drawing.Size(104, 45);
+			this.tbpm3.TabIndex = 37;
+			this.tbpm3.ValueChanged += new System.EventHandler(this.tbpm3_ValueChanged);
+			this.tbpm3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbpm3_MouseUp);
+			// 
+			// tbs
+			// 
+			this.tbs.Location = new System.Drawing.Point(215, 301);
+			this.tbs.Minimum = -10;
+			this.tbs.Name = "tbs";
+			this.tbs.Size = new System.Drawing.Size(104, 45);
+			this.tbs.TabIndex = 38;
+			this.tbs.ValueChanged += new System.EventHandler(this.tbs_ValueChanged);
+			this.tbs.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbs_MouseUp);
 			// 
 			// AddModel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(209, 367);
+			this.ClientSize = new System.Drawing.Size(470, 427);
+			this.Controls.Add(this.tbs);
+			this.Controls.Add(this.tbpm3);
+			this.Controls.Add(this.tbpm2);
+			this.Controls.Add(this.tbpm1);
+			this.Controls.Add(this.tbp3);
+			this.Controls.Add(this.tbp2);
+			this.Controls.Add(this.tbp1);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.tbSubtitle);
 			this.Controls.Add(this.label8);
@@ -288,6 +379,13 @@ namespace SceneConstructor
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "AddModel";
 			this.TextChanged += new System.EventHandler(this.AddModel_TextChanged);
+			((System.ComponentModel.ISupportInitialize)(this.tbp1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbp2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbp3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbpm1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbpm2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbpm3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.tbs)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -305,7 +403,6 @@ namespace SceneConstructor
 		private System.Windows.Forms.Button bSelectModel;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox tbx1;
 		private System.Windows.Forms.TextBox tby1;
 		private System.Windows.Forms.TextBox tbz1;
 		private System.Windows.Forms.Label label5;
@@ -318,5 +415,13 @@ namespace SceneConstructor
 		private System.Windows.Forms.TextBox tbSubtitle;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox tbDesc;
+		private System.Windows.Forms.TrackBar tbp2;
+		private System.Windows.Forms.TrackBar tbp3;
+		private System.Windows.Forms.TrackBar tbpm1;
+		private System.Windows.Forms.TrackBar tbpm2;
+		private System.Windows.Forms.TrackBar tbpm3;
+		private System.Windows.Forms.TrackBar tbs;
+		private System.Windows.Forms.TrackBar tbp1;
+		public System.Windows.Forms.TextBox tbx1;
 	}
 }

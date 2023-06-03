@@ -37,7 +37,6 @@ namespace SceneConstructor
 			this.button4 = new System.Windows.Forms.Button();
 			this.bPreVision = new System.Windows.Forms.Button();
 			this.bSave = new System.Windows.Forms.Button();
-			this.button8 = new System.Windows.Forms.Button();
 			this.bUploadFTP = new System.Windows.Forms.Button();
 			this.bLoadScene = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@ namespace SceneConstructor
 			this.bEditUsing = new System.Windows.Forms.Button();
 			this.bSaveAs = new System.Windows.Forms.Button();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.bWYSWIWG = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// bAddMetk
@@ -135,15 +135,6 @@ namespace SceneConstructor
 			this.bSave.Text = "Сохранить";
 			this.bSave.UseVisualStyleBackColor = true;
 			this.bSave.Click += new System.EventHandler(this.bSave_Click);
-			// 
-			// button8
-			// 
-			this.button8.Location = new System.Drawing.Point(679, 282);
-			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(146, 23);
-			this.button8.TabIndex = 20;
-			this.button8.Text = "Настройка сцены";
-			this.button8.UseVisualStyleBackColor = true;
 			// 
 			// bUploadFTP
 			// 
@@ -312,11 +303,22 @@ namespace SceneConstructor
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
+			// bWYSWIWG
+			// 
+			this.bWYSWIWG.Location = new System.Drawing.Point(678, 59);
+			this.bWYSWIWG.Name = "bWYSWIWG";
+			this.bWYSWIWG.Size = new System.Drawing.Size(145, 23);
+			this.bWYSWIWG.TabIndex = 41;
+			this.bWYSWIWG.Text = "button1";
+			this.bWYSWIWG.UseVisualStyleBackColor = true;
+			this.bWYSWIWG.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// EditorScene
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(836, 508);
+			this.Controls.Add(this.bWYSWIWG);
 			this.Controls.Add(this.bSaveAs);
 			this.Controls.Add(this.bEditUsing);
 			this.Controls.Add(this.bDeleteMetk);
@@ -334,7 +336,6 @@ namespace SceneConstructor
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.bLoadScene);
 			this.Controls.Add(this.bUploadFTP);
-			this.Controls.Add(this.button8);
 			this.Controls.Add(this.bSave);
 			this.Controls.Add(this.bPreVision);
 			this.Controls.Add(this.button4);
@@ -361,7 +362,6 @@ namespace SceneConstructor
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button bPreVision;
 		private System.Windows.Forms.Button bSave;
-		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Button bUploadFTP;
 		private System.Windows.Forms.Button bLoadScene;
 		private System.Windows.Forms.Label label3;
@@ -380,5 +380,6 @@ namespace SceneConstructor
 		private System.Windows.Forms.Button bEditUsing;
 		private System.Windows.Forms.Button bSaveAs;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private System.Windows.Forms.Button bWYSWIWG;
 	}
 }

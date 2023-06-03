@@ -204,5 +204,10 @@ namespace SceneConstructor
 		{
 
 		}
+
+		private void tbz1_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

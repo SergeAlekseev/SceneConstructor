@@ -18,6 +18,13 @@ namespace SceneConstructor
 		bool edit;
 		string oldName;
 		WEB web;
+		string tbx2Text;
+		string tby2Text;
+		string tbz2Text;
+		string tbx1Text;
+		string tby1Text; 
+		string tbz1Text; 
+		string tbSizeText;
 
 
 		public AddModel(Marker marker)
@@ -42,8 +49,15 @@ namespace SceneConstructor
 			tbz2.Text = "" + modelScene.markerOffset.z;
 			tbx1.Text = "" + modelScene.position.x;
 			tby1.Text = "" + modelScene.position.y;
-			tbz2.Text = "" + modelScene.position.z;
+			tbz1.Text = "" + modelScene.position.z;
 			tbSize.Text = "" + modelScene.size.x;
+			tbx2Text = "" + modelScene.markerOffset.x;
+			tby2Text= "" + modelScene.markerOffset.y;
+			tbz2Text= "" + modelScene.markerOffset.z;
+			tbx1Text= "" + modelScene.position.x;
+			tby1Text= "" + modelScene.position.y;
+			tbz1Text = "" + modelScene.position.z;
+			tbSizeText = "" + modelScene.size.x;
 			textBox2.Text = modelScene.id + ".glb";
 			openFileDialog1.Filter = "Model file(*.glb)|*.glb";
 
@@ -159,5 +173,82 @@ namespace SceneConstructor
 			if ((sender as TextBox).Text == "")
 				(sender as TextBox).Text = "0";
 		}
+
+		private void tbp1_ValueChanged(object sender, EventArgs e)
+		{
+			tbx1Text = (Double.Parse(tbx1.Text) + tbp1.Value * 0.05).ToString();
+		}
+
+		private void tbp2_ValueChanged(object sender, EventArgs e)
+		{
+			tby1Text = (Double.Parse(tby1.Text) + tbp2.Value * 0.05).ToString();
+		}
+
+		private void tbp3_ValueChanged(object sender, EventArgs e)
+		{
+			tbz1Text = (Double.Parse(tbz1.Text) + tbp3.Value * 0.05).ToString();
+		}
+
+		private void tbpm1_ValueChanged(object sender, EventArgs e)
+		{
+			tbx2Text = (Double.Parse(tbx2.Text) + tbpm1.Value * 0.05).ToString();
+		}
+
+		private void tbpm2_ValueChanged(object sender, EventArgs e)
+		{
+			tby2Text = (Double.Parse(tby2.Text) + tbpm2.Value * 0.05).ToString();
+		}
+
+		private void tbpm3_ValueChanged(object sender, EventArgs e)
+		{
+			tbz2Text = (Double.Parse(tbz2.Text) + tbpm3.Value * 0.05).ToString();
+		}
+		private void tbs_ValueChanged(object sender, EventArgs e)
+		{
+			tbSizeText = (Double.Parse(tbSize.Text) + tbs.Value * 0.05).ToString();
+		}
+
+		private void tbp1_MouseUp(object sender, MouseEventArgs e)
+		{
+			tbx1.Text = tbx1Text;
+			tbp1.Value = 0;
+		}
+
+		private void tbp2_MouseUp(object sender, MouseEventArgs e)
+		{
+			tby1.Text = tby1Text;
+			tbp2.Value = 0;
+		}
+
+		private void tbp3_MouseUp(object sender, MouseEventArgs e)
+		{
+			tbz1.Text = tbz1Text;
+			tbp3.Value = 0;
+		}
+
+		private void tbpm1_MouseUp(object sender, MouseEventArgs e)
+		{
+			tbx2.Text = tbx2Text;
+			tbpm1.Value = 0;
+		}
+
+		private void tbpm2_MouseUp(object sender, MouseEventArgs e)
+		{
+			tby2.Text = tby2Text;
+			tbpm2.Value = 0;
+		}
+
+		private void tbpm3_MouseUp(object sender, MouseEventArgs e)
+		{
+			tbz2.Text = tbz2Text;
+			tbpm3.Value = 0;
+		}
+
+		private void tbs_MouseUp(object sender, MouseEventArgs e)
+		{
+			tbSize.Text = tbSizeText;
+			tbs.Value = 0;
+		}
+
 	}
 }

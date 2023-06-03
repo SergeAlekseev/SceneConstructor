@@ -118,6 +118,7 @@ namespace SceneConstructor
 			this.tbz1.Size = new System.Drawing.Size(42, 20);
 			this.tbz1.TabIndex = 29;
 			this.tbz1.Text = "0";
+			this.tbz1.TextChanged += new System.EventHandler(this.tbz1_TextChanged);
 			this.tbz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
 			this.tbz1.Leave += new System.EventHandler(this.tbx1_TextChanged);
 			// 
