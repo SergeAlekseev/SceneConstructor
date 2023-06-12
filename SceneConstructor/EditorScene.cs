@@ -95,7 +95,7 @@ namespace SceneConstructor
 			client.UploadDirectory(Environment.CurrentDirectory + @"\scenes", @"/www/web3159.craft-host.ru/scenes", FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
 			client.UploadDirectory(Environment.CurrentDirectory + @"\resources", @"/www/web3159.craft-host.ru/resources", FtpFolderSyncMode.Update, FtpRemoteExists.Overwrite);
 
-			client.UploadFile(Environment.CurrentDirectory + "\\vr_mode.html", @"/www/web3159.craft-host.ru/vr_mode.html",FtpRemoteExists.Overwrite);
+			client.UploadFile(Environment.CurrentDirectory + "\\vr_mode.html", @"/www/web3159.craft-host.ru/vr_mode.html", FtpRemoteExists.Overwrite);
 			client.UploadFile(Environment.CurrentDirectory + "\\ar_mode.html", @"/www/web3159.craft-host.ru/ar_mode.html", FtpRemoteExists.Overwrite);
 
 
@@ -326,7 +326,12 @@ namespace SceneConstructor
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-
+			if (lbMetk.SelectedItem != null)
+			{
+				WYSIWYG newForm = new WYSIWYG(scene, lbMetk.SelectedItem as Marker, web);
+				newForm.Owner = this;
+				newForm.Show();
+			}
 		}
 	}
 }

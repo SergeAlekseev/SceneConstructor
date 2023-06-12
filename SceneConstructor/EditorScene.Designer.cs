@@ -309,7 +309,7 @@ namespace SceneConstructor
 			this.bWYSWIWG.Name = "bWYSWIWG";
 			this.bWYSWIWG.Size = new System.Drawing.Size(145, 23);
 			this.bWYSWIWG.TabIndex = 41;
-			this.bWYSWIWG.Text = "button1";
+			this.bWYSWIWG.Text = "WYSIWYG";
 			this.bWYSWIWG.UseVisualStyleBackColor = true;
 			this.bWYSWIWG.Click += new System.EventHandler(this.button1_Click);
 			// 
